@@ -1,0 +1,35 @@
+/* include your css here */
+
+* {font-family:Tahoma, sans-serif;}
+
+body {background-color: #dfdfdf;}
+
+#header {
+	height: 75px;
+	background-color: #ab3636;
+	text-align: center;
+}
+
+#header h1 {
+  color: #dfdfdf;
+  line-height: 70px;
+}
+
+#footer {
+	height: 75px;
+	background-color: #ab3636;
+	text-align: center;
+}
+
+#footer h1 {
+  color: #dfdfdf;
+  line-height: 70px;
+}
+
+/*#sidebar {
+	height: 400px;
+	width: 100px;
+	background-color: #dfdfdf;
+	float: left;
+	display: inline-block;
+}*/
