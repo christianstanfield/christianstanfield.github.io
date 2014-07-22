@@ -1,0 +1,42 @@
+/* You'll want to make the site responsive and nice looking here. Have fun!*/
+
+
+
+body {
+	width: 90%;
+}
+
+
+.header, .reflection, .references {
+	width: 90%;
+	margin-left: 25px;
+}
+
+.content {
+	width: 30%;
+	display: inline-block;
+	/*border: 2px solid black;*/
+	vertical-align: text-top;
+	margin-left: 25px;
+}
+
+.reflection {
+	width: 90%;
+	display: inline-block;
+}
+
+@media screen and (max-width: 900px) {
+  .content {
+    width: 45%;
+  }
+  #your-conclusion {
+  	width: 90%;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .content {
+    display: block;
+    width: 90%;
+  }
+}
