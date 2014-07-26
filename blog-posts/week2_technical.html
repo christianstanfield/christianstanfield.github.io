@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset=”utf-8”> 
+		<link rel="stylesheet" href="stylesheets/week2.css" />
+		<title>dbc | christian stanfield</title> 
+	</head>
+	
+	<body>
+
+		<header class="special">
+			<p>dbc | <span>christian</span> stanfield</p>
+		</header>
+
+		<div class="special" id="sidebar">
+			<p>blog</p>
+		</div>
+
+		<section>
+			<h3>CSS Box Model</h3>
+			<img height="442" width="742" src="images/cssbox.png">
+			<article>
+				<h4>Content</h4>
+				<p>Every element (each thing) in your HTML is considered a block (basically a box as in the CSS Box Model). In the image above you can see an example of how this works.</p>
+				<p>Your content (typically text or an image) is the centerpiece of this block around which is built the padding, border and margin.</p>
+				<h4>Border</h4>
+				<p>The border of your content sits between the margin and padding, dividing the two. It's the most straightforward element which acts exactly as you would expect a border to do. It has it's own properties which you can set, such as the size, the color and the type (solid, dashed line, etc). The border around this block here you can see is black, solid and 5 pixels in size.</p>
+				<p>A border is not required for all content. It still exists to separate the margin from the padding, but every border will appear transparent by default if no attributes are set.</p>
+				<h4>Padding</h4>
+				<p>Padding sits between your content and the border. On this text you can see there's a space between the edge and the black border and that's its padding.</p>
+				<p>You can set the size of the padding to whatever you like, and if your content has a background color the padding will also take on that same attribute.</p>
+				<h4>Margin</h4>
+				<p>Last but not least is the margin. As you can see in the image, the margin sits outside of your border and is transparent. Functionally it's the exact same idea as your padding, except it defines the space between the edge of your border and the other outside objects around it.</p>
+				<p>You can see the outer edge of this border is separated nicely from the header above and the footer below. That's the margin in action. If no margin were set all these elements would be piled on top of one another back to back looking rather messy.</p>
+				<h4>Conclusion</h4>
+				<p>Now that you understand the Box Model of each element in your HTML and how they interact with each other you can use CSS to set the attributes for each as you like.</p>
+				<p>There's one last thing that we didn't cover, but you can see it in the image above. Each one of these elements within it has four distinct parts. Besides adjusting any of them on every side equally, you can also specify to make adjustments to only one side at a time. So for example, you can set the top margin of your content to be a different size then the left or right margin. This works with all of the elements we just discussed and gives you the complete freedom to design your website however you like.</p>
+				<h4>Happy Designing!</h4>
+			</article>
+		</section>
+
+		<footer class="special">
+			<p><span>2014</span> i'm a footer! don't hate</p>
+		</footer>
+
+	</body> 
+</html>
