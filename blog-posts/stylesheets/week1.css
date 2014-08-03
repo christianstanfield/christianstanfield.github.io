@@ -5,10 +5,17 @@ li {color: black;}
 ul {font-size: 25px;}
 li:first-child {font-weight: bold;}
 
-a {
+h3 a {
 	text-decoration: none;
 	color: black;
 	margin: 15px;
+	font-family: sans-serif;
+	font-weight: bold;
+}
+
+p a {
+	text-decoration: none;
+	color: black;
 	font-family: sans-serif;
 	font-weight: bold;
 }
