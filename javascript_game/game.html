@@ -3,20 +3,650 @@
 <html>
 	<head>
 		<title>Javascript Game | Christian Stanfield</title>
-		<!-- <style type="text/css">
+
+		<link href='http://fonts.googleapis.com/css?family=PT+Mono' rel='stylesheet' type='text/css'>
+
+		<style type="text/css">
 			body {
 				background-color: #303030;
-				margin-top: -10px;
-				margin-left: -10px;
 			}
-		</style> -->
-		<script src="script.js">
-	
+			#map {
+				margin-left: -10px;
+				margin-top: -10px;
+			}
+			#text {
+				position: absolute;
+				top: 50px; 
+				left: 600px;
+				color: white;
+				font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;	
+				line-height: 2;
+				letter-spacing: 1px;
+				width: 400px;
+			}
+			#rescue {
+				margin-top: 25px;
+				display: none;
+			}
+			#gameover {
+				display: none;
+			}
+			#gamewin {
+				display: none;
+			}
+			#hero {
+				position: absolute;
+				top: 500px; 
+				left: 270px;
+				z-index: 100;
+			}
+			#guard {
+				position: absolute;
+				top: 125px; 
+				left: 115px;
+				z-index: 200;
+			}
+			#toad {
+				position: absolute;
+				top: 245px; 
+				left: 25px;	
+			}
+		</style>
+
+		<script type="text/javascript">
+			
+
+			// Moving hero
+
+			moveUp = function() {
+				var hero = document.getElementById('hero');
+				var toad = document.getElementById('toad');
+				var guard = document.getElementById('guard');
+
+			// Setting positions
+			// Toad is always offset by 15px from the hero
+
+				hero.position1 = function() {
+					this.style.top = "5px";
+					this.style.left = "270px";
+				};
+
+				toad.position1 = function() {
+					this.style.top = "20px";
+					this.style.left = "285px";
+				};
+
+				hero.position2 = function() {
+					this.style.top = "125px";
+					this.style.left = "120px";
+				};
+
+				toad.position2 = function() {
+					this.style.top = "140px";
+					this.style.left = "135px";
+				};
+
+				hero.position3 = function() {
+					this.style.top = "85px";
+					this.style.left = "270px";
+				};
+
+				toad.position3 = function() {
+					this.style.top = "100px";
+					this.style.left = "285px";
+				};
+
+				hero.position4 = function() {
+					this.style.top = "125px";
+					this.style.left = "420px";
+				};
+
+				toad.position4 = function() {
+					this.style.top = "140px";
+					this.style.left = "435px";
+				};
+
+				hero.position5 = function() {
+					this.style.top = "240px";
+					this.style.left = "40px";
+				};
+
+				toad.position5 = function() {
+					this.style.top = "255px";
+					this.style.left = "55px";
+				};
+
+				hero.position6 = function() {
+					this.style.top = "240px";
+					this.style.left = "120px";
+				};
+
+				toad.position6 = function() {
+					this.style.top = "255px";
+					this.style.left = "135px";
+				};
+
+				hero.position7 = function() {
+					this.style.top = "250px";
+					this.style.left = "420px";
+				};
+
+				toad.position7 = function() {
+					this.style.top = "256px";
+					this.style.left = "435px";
+				};
+
+				hero.position8 = function() {
+					this.style.top = "240px";
+					this.style.left = "500px";
+				};
+
+				toad.position8 = function() {
+					this.style.top = "255px";
+					this.style.left = "515px";
+				};
+
+				hero.position9 = function() {
+					this.style.top = "380px";
+					this.style.left = "120px";
+				};
+
+				toad.position9 = function() {
+					this.style.top = "395px";
+					this.style.left = "135px";
+				};
+
+				hero.position10 = function() {
+					this.style.top = "390px";
+					this.style.left = "270px";
+				};
+
+				toad.position10 = function() {
+					this.style.top = "405px";
+					this.style.left = "285px";
+				};
+				
+				hero.position11 = function() {
+					this.style.top = "390px";
+					this.style.left = "420px";
+				};
+
+				toad.position11 = function() {
+					this.style.top = "405px";
+					this.style.left = "435px";
+				};
+				
+				hero.position12 = function() {
+					this.style.top = "500px";
+					this.style.left = "270px";
+				};
+
+				toad.position12 = function() {
+					this.style.top = "515px";
+					this.style.left = "285px";
+				};
+
+				// Starting position
+
+				if (typeof hero.position === 'undefined') {
+					hero.position = 10;
+					hero.position10();
+				};
+
+				// Other positions
+
+				switch (hero.position) {
+	        case 3:
+	          hero.position = 1;
+	          hero.position1();
+
+	          if (toad.free) { 
+	          	toad.position1(); 
+	          	gameWin();
+	          };
+	          break;
+	        case 6:
+	          hero.position = 2;
+	          hero.position2();
+
+	          if (toad.free) { toad.position2(); };
+	          break;
+	        case 7:
+	          hero.position = 4;
+	          hero.position4();
+
+	          if (toad.free) { toad.position4(); };
+	          break;
+	        case 9:
+	          hero.position = 6;
+	          hero.position6();
+
+	          if (toad.free) { toad.position6(); };
+	          break;
+	        case 11:
+	          hero.position = 7;
+	          hero.position7();
+
+	          if (toad.free) { toad.position7(); };
+	          break;
+	         case 12:
+	          hero.position = 10;
+	          hero.position10();
+
+	          if (toad.free) { toad.position10(); };
+	          break;
+        };
+        if (guard.position === hero.position) {
+			  	gameOver();
+			  } else {
+			  	moveGuard();
+			  };
+			};
+
+			moveDown = function() {
+				var hero = document.getElementById('hero');
+				var toad = document.getElementById('toad');
+				
+				if (typeof hero.position === 'undefined') {
+					moveGuard();
+				} else {
+
+					// Setting positions
+
+		      switch (hero.position) {
+		        case 1:
+		          hero.position = 3;
+		          hero.position3();
+		          break;
+		        case 2:
+		          hero.position = 6;
+		          hero.position6();
+
+		          if (toad.free) { toad.position6(); };
+		          break;
+		        case 4:
+		          hero.position = 7;
+		          hero.position7();
+
+		          if (toad.free) { toad.position7(); };
+		          break;
+		        case 6:
+		          hero.position = 9;
+		          hero.position9();
+
+		          if (toad.free) { toad.position9(); };
+		          break;
+		        case 7:
+		          hero.position = 11;
+		          hero.position11();
+
+		          if (toad.free) { toad.position11(); };
+		          break;
+		        case 10:
+		          hero.position = 12;
+		          hero.position12();
+
+		          if (toad.free) { toad.position12(); };
+		          break;
+	      	};
+		      if (guard.position === hero.position) {
+				  	gameOver();
+				  } else {
+				  	moveGuard();
+				  };
+				};				
+	    };
+
+	    moveRight = function() {
+				var hero = document.getElementById('hero');
+				var toad = document.getElementById('toad');
+				
+				if (typeof hero.position === 'undefined') {
+					moveGuard();
+				} else {
+
+					// Setting positions
+
+		      switch (hero.position) {
+		        case 2:
+		          hero.position = 3;
+		          hero.position3();
+
+		          if (toad.free) { toad.position3(); };
+		          break;
+		        case 3:
+		          hero.position = 4;
+		          hero.position4();
+
+		          if (toad.free) { toad.position4(); };
+		          break;
+		        case 5:
+		          hero.position = 6;
+		          hero.position6();
+
+		          if (toad.free) { toad.position6(); };
+		          break;
+		        case 7:
+		          hero.position = 8;
+		          hero.position8();
+
+		          if (toad.free) { toad.position8(); };
+		          break;
+		        case 9:
+		          hero.position = 10;
+		          hero.position10();
+
+		          if (toad.free) { toad.position10(); };
+		          break;
+		        case 10:
+		          hero.position = 11;
+		          hero.position11();
+
+		          if (toad.free) { toad.position11(); };
+		          break;
+		      };
+		      if (guard.position === hero.position) {
+				  	gameOver();
+				  } else {
+				  	moveGuard();
+				  };
+				};
+			};
+
+			moveLeft = function() {
+				var hero = document.getElementById('hero');
+				var toad = document.getElementById('toad');
+				
+				if (typeof hero.position === 'undefined') {
+					moveGuard();
+				} else {
+
+					// Setting positions
+
+		      switch (hero.position) {
+		        case 3:
+		          hero.position = 2;
+		          hero.position2();
+
+		          if (toad.free) { toad.position2(); };
+		          break;
+		        case 4:
+		          hero.position = 3;
+		          hero.position3();
+
+		          if (toad.free) { toad.position3(); };
+		          break;
+		        case 6:
+		          hero.position = 5;
+		          hero.position5();
+
+		          // Freeing Toad
+
+		          toad.free = true;
+							toad.position5();
+
+							var rescue = document.getElementById('rescue');
+							rescue.style.display = "block";
+
+		          break;
+		        case 8:
+		          hero.position = 7;
+		          hero.position7();
+
+		          if (toad.free) { toad.position7(); };
+		          break;
+		        case 10:
+		          hero.position = 9;
+		          hero.position9();
+
+		          if (toad.free) { toad.position9(); };
+		          break;
+		        case 11:
+		          hero.position = 10;
+		          hero.position10();
+
+		          if (toad.free) { toad.position10(); };
+		          break;
+		      };
+		    	if (guard.position === hero.position) {
+				  	gameOver();
+				  } else {
+				  	moveGuard();
+				  };
+				};
+			};
+
+			stay = function() {
+				if (typeof hero.position === 'undefined') {
+					moveGuard();
+				} else {
+
+					if (guard.position === hero.position) {
+			  		gameOver();
+			  	} else {
+			  		moveGuard();
+			  	};
+			  };
+			};
+
+			// Moving Guard
+
+			moveGuard = function() {
+				var guard = document.getElementById('guard');
+
+				if (typeof guard.position === 'undefined') {
+					guard.position = 2;
+				};
+
+				// Setting positions
+
+				guard.position2 = function() {
+					this.style.top = "125px";
+					this.style.left = "115px";
+				};
+
+				guard.position3 = function() {
+					this.style.top = "85px";
+					this.style.left = "265px";
+				};
+
+				guard.position4 = function() {
+					this.style.top = "125px";
+					this.style.left = "415px";
+				};
+
+				guard.position6 = function() {
+					this.style.top = "240px";
+					this.style.left = "115px";
+				};
+
+				guard.position7 = function() {
+					this.style.top = "250px";
+					this.style.left = "415px";
+				};
+
+				guard.position9 = function() {
+					this.style.top = "380px";
+					this.style.left = "115px";
+				};
+
+				guard.position10 = function() {
+					this.style.top = "390px";
+					this.style.left = "265px";
+				};
+
+				guard.position11 = function() {
+					this.style.top = "390px";
+					this.style.left = "415px";
+				};
+
+			  switch (guard.position) {
+			    case 2:
+			    	if (hero.position === 6) {
+		  				guard.position = 6;
+			    		guard.position6();
+		  			} else if (Math.floor(Math.random()*2)) {
+			    		guard.position = 9;
+			    		guard.position9();
+			    	} else {
+			    		guard.position = 6;
+			    		guard.position6();
+			    	};
+			      break;
+			    case 6:
+			    	if (hero.position === 9) {
+		  				guard.position = 9;
+			    		guard.position9();
+		  			} else if (Math.floor(Math.random()*2)) {
+			    		guard.position = 10;
+			    		guard.position10();
+			    	} else {
+			    		guard.position = 9;
+			    		guard.position9();
+			    	};
+			      break;
+			    case 9:
+			    	if (hero.position === 10) {
+		  				guard.position = 10;
+			    		guard.position10();
+		  			} else if (Math.floor(Math.random()*2)) {
+			    		guard.position = 11;
+			    		guard.position11();
+			    	} else {
+			    		guard.position = 10;
+			    		guard.position10();
+			    	};
+			      break;
+			    case 10:
+			    	if (hero.position === 11) {
+		  				guard.position = 11;
+			    		guard.position11();
+		  			} else if (Math.floor(Math.random()*2)) {
+			    		guard.position = 7;
+			    		guard.position7();
+			    	} else {
+			    		guard.position = 11;
+			    		guard.position11();
+			    	};
+			      break;
+			    case 11:
+			    	if (hero.position === 7) {
+		  				guard.position = 7;
+			    		guard.position7();
+		  			} else if (Math.floor(Math.random()*2)) {
+			    		guard.position = 4;
+			    		guard.position4();
+			    	} else {
+			    		guard.position = 7;
+			    		guard.position7();
+			    	};
+			      break;
+			    case 7:
+			    	if (hero.position === 4) {
+		  				guard.position = 4;
+			    		guard.position4();
+		  			} else if (Math.floor(Math.random()*2)) {
+			    		guard.position = 3;
+			    		guard.position3();
+			    	} else {
+			    		guard.position = 4;
+			    		guard.position4();
+			    	};
+			      break;
+			    case 4:
+			      if (hero.position === 3) {
+		  				guard.position = 3;
+			    		guard.position3();
+		  			} else if (Math.floor(Math.random()*2)) {
+			    		guard.position = 2;
+			    		guard.position2();
+			    	} else {
+			    		guard.position = 3;
+			    		guard.position3();
+			    	};
+			      break;
+			    case 3:
+			      if (hero.position === 2) {
+		  				guard.position = 2;
+			    		guard.position2();
+		  			} else if (Math.floor(Math.random()*2)) {
+			    		guard.position = 6;
+			    		guard.position6();
+			    	} else {
+			    		guard.position = 2;
+			    		guard.position2();
+			    	};
+			      break;
+			  };
+				if (guard.position === hero.position) {
+		  		gameOver();
+		  	};
+			};
+
+		  
+
+
+			// Game over
+
+			var gameOver = function() {
+  			var intro = document.getElementById('intro');
+  			intro.style.display = "none";
+  			var rescue = document.getElementById('rescue');
+  			rescue.style.display = "none";
+  			var gameover = document.getElementById('gameover');
+  			gameover.style.display = "block";
+			};
+
+			var restart = function() {
+				window.location.reload();
+			};
+				
+			// For the win 
+
+			var gameWin = function() {
+				var intro = document.getElementById('intro');
+  			intro.style.display = "none";
+  			var rescue = document.getElementById('rescue');
+  			rescue.style.display = "none";
+  			var gamewin = document.getElementById('gamewin');
+  			gamewin.style.display = "block";
+			};
+
+			
+
 		</script>
 	</head>
 
 	<body>
-		<!-- <img src="images/Javascript_game_map.png"> -->
+		<img id = "map" src="images/Javascript_game_map.png">
+		<div id = "text">
+			<h3 style="text-align: center">Jail Break!</h3>
+			<div id="intro">
+				<p>Rescue the prisoner from their jail cell and make your way toward the top to escape.</p>
+				<p> Watch out for the guard!</p>
+				<button onclick="moveUp()">Move Up</button>
+				<button onclick="moveDown()">Move Down</button>
+				<button onclick="moveLeft()">Move Left</button>
+				<button onclick="moveRight()">Move Right</button>
+				<button onclick="stay()">Stay</button>
+			</div>
+			<div id="rescue">
+				<p>Sorry Mario, but your princess is in another castle!</p>
+				<p> J/K :) Now make a break for it!</p>
+			</div>
+			<div id="gameover">
+				<p>Game over man, game over!</p>
+				<p>It's the zombie life for you.</p>
+				<button onclick="restart()">Restart</button>
+			</div>
+			<div id="gamewin">
+				<p>Woot! Victory is yours!</p>
+				<p> Relish in your awesomeness.</p>
+				<a href="https://www.youtube.com/watch?v=NyN9ojKYVIU"><button>Celebrate</button></a>
+			</div>
+		</div>
 		<img id="hero" src="images/hero.png">
+		<img id="guard" src="images/guard.png">
+		<img id="toad" src="images/toad.png">
 	</body>
 </html>
