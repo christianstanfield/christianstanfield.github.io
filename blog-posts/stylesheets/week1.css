@@ -25,6 +25,7 @@ p a {
 
 #red {color: #bd2b22;}
 
+#strike {text-decoration: line-through;}
 
 .special {
 	background-color: #000000;
