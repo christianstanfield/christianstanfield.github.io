@@ -33,7 +33,6 @@ p a {
 	margin-left: -20px;
 	margin-right: -20px;
 	height: 75px;
-	/*line-height: 90px;*/
 }
 
 .special p {
@@ -41,7 +40,6 @@ p a {
 	color: #FFFFFF;
 	font-family: sans-serif;
 	margin-top: -33px;
-	/*line-height: 50px;*/
 }
 
 #sidebar {
@@ -78,7 +76,7 @@ p a {
 
 #post4 {
 	margin-top: 100px;
-	margin-bottom: 250px;
+	margin-bottom: 150px;
 }
 
 .content p {
