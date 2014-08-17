@@ -23,7 +23,7 @@ a {
 
 a:hover { text-decoration: underline; }
 
-#logo { position: relative; } 
+header { position: relative; } 
 
 #image { position: absolute; } 
 
@@ -104,14 +104,3 @@ li {
 	left: 610px;
 }
 
-/*@media screen and (max-width: 1000px) {
-  img {
-		height: 600px;
-  	width: 1200px;
-  }
-  .text {font-size: 30px;}
-}
-
-@media screen and (max-width: 640px) {
-  
-}*/
