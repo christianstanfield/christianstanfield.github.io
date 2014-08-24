@@ -21,15 +21,11 @@ a:hover { text-decoration: underline; }
 
 header { position: relative; } 
 
-h1 { 
-	z-index: 100; 
-	position: absolute; 
-} 
-
 header h1 {
 	font-family: PT Mono; 
 	font-size: 50px;
 	font-weight: lighter;
+	position: absolute;
 	-webkit-transform: rotate(-25deg);
 	-ms-transform: rotate(-25deg);
 	transform: rotate(-25deg);
@@ -54,7 +50,6 @@ header h1 {
 }
 
 #info {
-	z-index: 100; 
 	position: absolute;
 	top: 525px;
 	left: 550px;
@@ -70,73 +65,59 @@ li {
 
 .hide { list-style-type: none; }
 
-#links {
-	border-radius: 15px;
-	z-index: 100;
+.links { position: relative; }
+
+.links div { 
+	position: absolute; 
+	width: 250px;
 	-webkit-transform: rotate(-25deg);
 	-ms-transform: rotate(-25deg);
 	transform: rotate(-25deg);
 }
 
-#links img {
-	-webkit-transform: rotate(25deg);
-	-ms-transform: rotate(25deg);
-	transform: rotate(25deg);
-}
-
 #gh {
-	position: absolute;
-	top: 173px;
-	left: 366px;
-	width: 250px;
-
+	top: 175px;
+	left: 455px;
 }
 
 #gh2 {
-	position: absolute;
-	top: 174px; 
-	left: 316px; 
+	top: 194px; 
+	left: 415px; 
 	display: none;
-	width: 250px;
 }
 
 #fb {
-	position: absolute;
-	top: 264px;
-	left: 398px;
-	width: 250px;
+	top: 250px;
+	left: 525px;
 }
 
 #fb2 {
-	position: absolute;
-	top: 265px;
-	left: 348px;
-	width: 250px;
+	top: 269px;
+	left: 485px;
 	display: none;
 }
 
 #li {
-	position: absolute;
-	top: 366px;
-	left: 428px;
-	width: 250px;
+	top: 325px;
+	left: 590px;
 }
 
 #li2 {
-	position: absolute;
-	top: 367px;
-	left: 388px;
-	width: 250px;
+	top: 344px;
+	left: 550px;
 	display: none;
 }
 
-#links h1 {
+.links h1 {
 	font-size: 2em;
 	color: white;
-	bottom: -20px;
-	left: 70px;
 	display: none;
-	padding: 10px 5px 10px 25px;
+	margin-left: 25px;
+	position: absolute;
+	top: -5px;
 }
+
+
+#li2 h1 { top: 0px; }
 
 
