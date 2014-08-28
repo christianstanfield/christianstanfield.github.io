@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset=”utf-8”> 
+		<link rel="stylesheet" href="stylesheets/blog.css" />
+		<style type="text/css">
+			#post { margin-top: 100px; margin-bottom: 75px; }
+			h4 a { text-decoration: none; color: black; }
+			h4 a:hover { text-decoration: underline; }
+		</style>
+		<title>dbc | christian stanfield</title> 
+	</head>
+	
+	<body>
+
+		<header class='headfoot'>
+			<p id="head1">dbc | <span id="red">christian</span> stanfield</p>
+			<p id="head2"><span id="pipe">|</span> <span id="blog">blog</span></p>
+		</header>
+
+		<section id='post'>
+			<h3 style="margin-bottom: 30px">SQL Injection</h3>
+			<img src="images/sql.png" width="500px" style="margin: 20px; border-radius: 3px">
+			<article>
+				<h4><a href="http://xkcd.com/327/" target="_blank">Little Bobby Tables</a></h4>
+				<p>Security on the web is definitely an important issue today. The more information, especially sensitive information that gets stored online the more motivation there will be for people to try and gain access to that information. One common way of gaining unauthorized access to a website's database is through SQL injection.</p>
+				<p>Since this is our first week studying databases and SQL, I was curious to know more about the type of vunerabilites databases can have and the type of security that is needed to prevent attacks. I know it is an advanced topic, but from my research it seems to start out simple enough.</p>
+	
+				<h4>' OR 1 = 1 --</h4>
+				<p>The basic idea as I understand it, is that when you're taking user-provided information through a form, such as an id or password, and passing it into your database to access information, behind the scenes SQL is being written to talk to the database and handle your requests. So in the above example, entering your username and password triggers the above SQL statement which is sent to the database to verify your identity. If however someone instead of entering a legitimate login, enters SQL code designed to gain access and run instructions on the database, that code is passed in as it comes from the user, and the database only does what it's told.</p>
+			</article>
+
+				<img src="images/tarrifs.jpeg" width="500px" style="margin: 20px; border-radius: 3px">
+
+			<article>
+				<h4>Prevention</h4>
+				<p>There are many ways to check for and prevent this type of code from entering into your database queries. They all have been developed over time it seems in what appears to be a cat and mouse game between hackers and security developers. Besides watching the information being entered for bits of code that can do harm and escaping them, other common ways of prevention are to check if a specific entry matches the type of input that was expected, to look for code hidden by comment markers which would otherwise be spotted, alternate methods of preventing information access such as always encrypting passwords and sensitive information before they reach the database, and making methods that directly access important information private, so they cannot be called from the outside by a user.</p>
+			</article>
+
+				<img src="images/CatMouse.jpg" height="350px" style="margin: 20px; border-radius: 3px">
+
+			<article>
+				<h4>Conclusion</h4>
+				<p>I know as we get more into working with databases we'll be learning more about security and vulnerabilities as we go. My main take away from doing research was that just as everytime someone finds a way to jailbreak the iPhone and Apple fixes the vulnerability, someone else comes along to find yet another way to jailbreak it again, so to will website security always be that type of cat and mouse game. Even with all our modern security website breaches and identity theft are still quite common, and techniques as old as SQL injection, which websites have been dealing with for decades are still around in some capacity and not completely a thing of the past. The more important the information we put online and the more of it there is out there, hackers even from other countries across the world will be coming after it. It seems pretty daunting when you think about it that way, but it's not a topic I expect to master anytime soon, only one I look forward to learning more about.</p>
+				<h4>Happy Coding!</h4>
+			</article>
+		</section>
+
+		<footer class='headfoot'>
+			<p><span id="red">2014</span> &#169; i foot thee</p>
+		</footer>
+
+	</body> 
+</html>
