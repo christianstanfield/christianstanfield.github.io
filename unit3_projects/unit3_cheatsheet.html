@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset=”utf-8”> 
+		<link rel="stylesheet" href="../blog-posts/stylesheets/blog.css" />
+		<style type="text/css">
+			#post { margin-top: 100px; margin-bottom: 75px; }
+			li a { text-decoration: none; color: black; }
+			li a:hover { text-decoration: underline; }
+			#toc { text-align: center; }
+			ul { 
+				padding-top: 10px;
+				padding-bottom: 40px;
+				margin-left: 50px;
+			}
+			li { 
+				color: #f1db50;
+				float: left;
+				list-style-type: disc; 
+				margin-right: 30px; 
+			}
+			.hide { list-style-type: none; }
+			code { 
+				background-color: #f7f7f7; 
+				padding: 10px;
+				display: block;
+				margin: 0px 10px 0px 10px;
+			}
+			h4 { font-size: 1.1em; margin-top: 30px; }
+			.indent50 { padding-left: 50px; }
+		</style>
+		<title>dbc | christian stanfield</title> 
+	</head>
+	
+	<body>
+
+		<header class='headfoot'>
+			<p id="head1">dbc | <span id="red">christian</span> stanfield</p>
+			<p id="head2"><span id="pipe">|</span> <span id="blog">blog</span></p>
+		</header>
+
+		<section id='post'>
+			<h3 style="margin-bottom: 30px">Javascript Cheatsheet</h3>
+			<img src="images/js.png" width="300px" style="margin: 15px; border-radius: 5px">
+			<article id="toc">
+				<h3 id="contents">Contents</h3>
+				<ul>
+					<li class="hide"><a href="#functions">Functions</a></li>
+					<li><a href="#objects">Objects</a></li>
+					<li><a href="#methods">Methods</a></li>
+					<li><a href="#constructors">Constructors</a></li>
+					<li><a href="#loops">Loops</a></li>
+					<li><a href="#conditionals">Conditionals</a></li>
+				</ul>
+			</article>
+
+			<article>
+				<h4 id="functions">Functions</h4>
+				<p>Syntax</p>
+				<code>var functionName = function(parameter, parameter) { body; }</code>
+				<p>Example</p>
+				<code>var sayHello = function() { return 'hello'; }</code>
+				<code>sayHello(); <em>// => 'hello'</em></code>
+				<p>Alternate Example</p>
+				<code>var add = function(x, y) { return x + y; }</code>
+				<code>add(1,1); <em>// => 2</em></code>
+			
+				<h4 id="objects">Objects</h4>
+				<p>Syntax</p>
+				<code>var objectName = new Object();</code>
+				<code>var objectName = {};</code>
+				<p>Example</p>
+				<code>var person = { firstName: 'Indiana', lastName: 'Jones', age: 50 };</code>
+				<code>person.firstName; <em>// => 'Indiana'</em></code>
+				<code>person['firstName']; <em>// => 'Indiana'</em></code> 
+				<p>Add or Update Properties</p>
+				<code>person.firstName = 'Indy';</code>
+				<code>person.career = 'archeologist';</code>
+				<code>person; <em>// => { firstName: 'Indy',</em></code>
+				<code style="padding-left: 150px"><em>lastName: 'Jones',</em></code>
+				<code style="padding-left: 150px"><em>age: 50,</em></code>
+				<code style="padding-left: 150px"><em>career: 'archeologist' }</em></code>
+				<p>Nested Objects</p>
+				<code>person.accessories = { headGear: 'hat', weapon: 'whip' };</code>
+				<code>person.accessories.weapon; <em>// => 'whip'</em></code>
+			
+				<h4 id="methods">Methods</h4>
+				<p>Syntax</p>
+				<code>object.methodName = function(parameter, parameter) { body; }</code>
+				<p>Example</p>
+				<code>person.setWeapon = function(newWeapon) {this.accessories.weapon = newWeapon;}</code>
+				<code>person.setWeapon('bazooka');</code>
+				<code>person.accessories.weapon; <em>// => 'bazooka'</em></code>
+				<p>Chaining Methods</p>
+				<code>var myString = 'I like programming';</code>
+				<code>myString.concat(' and sushi!').toUpperCase();</code> 
+				<code class='indent50'><em>// => 'I LIKE PROGRAMMING AND SUSHI!'</em></code>
+
+				<h4 id="constructors">Constructors</h4>
+				<p>Declaring</p>
+				<code>function Robot(name, type) {</code>
+				<code class='indent50'>this.name = name;</code>
+  			<code class='indent50'>this.type = type;</code>
+  			<code class='indent50'>this.material = 'metal';</code>
+  			<code class='indent50'>this.newType = function(newType) { this.type = newType; }</code>
+  			<code class='indent50'>var loveInterest = 'EVE'; }</code>
+				<p>Creating an Instance</p>
+				<code>var wallE = new Robot('WALL-E', 'Waste Allocation Load Lifter Earth-Class');</code>
+				<code>wallE.name; <em>// => 'WALL-E'</em></code>
+				<code>wallE.material; <em>// => 'metal'</em></code>
+				<code>wallE.newType('movieStar'); <em>// wallE.type; => 'movieStar'</em></code>
+				<code>wallE.loveInterest; <em>// => private parameter</em></code>
+				
+				<h4 id="loops">Loops</h4>
+				<p>While / Do</p>
+				<code>var n = 1;</code>
+				<code>while (n <= 5) { console.log('n is equal to ' + n); n++; }</code>
+				<code class='indent50'><em>// => 'n is equal to 1', 'n is equal to 2', etc</em></code>
+				<code>var n = 1;</code>
+				<code>do { console.log('n is equal to ' + n); n++; } while (n < 1);</code>
+ 				<code class='indent50'><em>// => 'n is equal to 1' (execute code, then check while condition)</em></code>
+				<p>For / In</p>
+				<code>var tacos = ['asada', 'carnitas', 'pollo', 'al pastor'];</code>
+				<code>for (var i = 0; i < tacos.length; i++) { </code>
+				<code class='indent50'>console.log( 'I would like to order a ' + tacos[i] + ' taco.'); }</code>
+				<code class='indent50'><em>// => 'I would like to order a asada taco.', etc</em></code>
+				<code>for (i in tacos) { </code>
+				<code class='indent50'>console.log( 'Seriously I really would like a ' + tacos[i] + ' taco.'); }</code>
+				<code class='indent50'><em>// => 'Seriously I really would like a asada taco.', etc</em></code>
+				<p>Switch / Case</p>
+				<code>var yourChoice = prompt('What can I do for you?');</code>
+				<code>switch (yourChoice) {</code>
+				<code class='indent50'>case 'money': console.log('This window is for deposits only!');</code>
+				<code class='indent50'>break;</code>
+				<code class='indent50'>case 'more money': console.log('Seriously, not gonna happen.');</code>
+				<code class='indent50'>break;</code>
+				<code class='indent50'>case 'women': console.log('How about a taco?');</code>
+				<code class='indent50'>break;</code>
+				<code class='indent50'>default: console.log('You keep using that word. I'm not sure it means what you think it means.'); }</code>
+
+				<h4 id="conditionals">Conditionals</h4>
+				<p>If, Else if, Else</p>
+				<code>if (name == 'Inigo Montoya' && killedFather == true) {</code>
+				<code class='indent50'>console.log('Prepare to die!');</code>
+  			<code>} else if (name == 'Inigo Montoya' && killedFather == false) {</code>
+  			<code class='indent50'>console.log('Sorry to have bothered you.');</code>
+  			<code>} else {</code>
+  			<code class='indent50'>console.log('Want to get tacos?'); }</code>
+
+				<h4 style="text-align: center">Now you're a javascript master!</h4>
+			</article>
+			<img src="images/inigo-montoya.jpg" width="300px" style="margin: 15px; border-radius: 5px">
+		</section>
+
+		<footer class='headfoot'>
+			<p><span id="red">2014</span> &#169; i foot thee</p>
+		</footer>
+
+	</body> 
+</html>

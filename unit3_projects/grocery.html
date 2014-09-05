@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Grocery List App</title>
+
+		<script type="text/javascript">
+			var groceryList = {};
+
+			groceryList.add = function(item, quantity, aisle) {
+			  this[item] = {quantity: quantity, aisle: aisle};
+			}
+			
+			groceryList.remove = function(item) {
+			  delete this[item];
+			}
+			
+			groceryList.changeQuantity = function(item, quantity) {
+			  this[item]["quantity"] = quantity;
+			}
+			
+			var show = function(obj) {
+				console.log("Your grocery list:");
+			  for (prop in obj) {
+			  	if (!(obj[prop] instanceof Function)) {
+			  		console.log("> " + obj[prop]["quantity"] + " " + prop + " in the " + obj[			prop]["aisle"] + " aisle.");
+			  	}
+			  }
+			}
+		</script>
+	</head>
+
+	<body>
+		<h1>Grocery List App</h1>
+
+		<h2>Your Grocery List:</h2>
+		<div id="groceryList"></div>
+		<script type="text/javascript">
+		  var div = document.getElementById("groceryList");
+		  div.textContent = lat;
+		  var text = div.textContent;
+		</script>
+
+		<h3>Add an Item:</h3>
+		<form action="" method="">
+			<div><input type='hidden' id='latValue'></div>
+			<div>Name: <input type="text" name="item" /></div>
+			<div>Quantity: <input type="text" name="quantity" value="1" /></div>
+			<div>Aisle: <input type="text" name="aisle" value="Miscellaneous" /></div>
+			<div><input type="submit" /></div>
+			<script>
+				var lat = input.lat();
+				document.getElementById("latValue").value = lat;
+			</script>
+		</form>
+
+		<h3>Remove an Item:</h3>
+		<form action="" method="">
+			<div>Name: <input type="text" name="item" /></div>
+			<div><input type="submit" /></div>
+		</form>
+
+		<h3>Update an Item:</h3>
+		<form action="" method="">
+			<div>Name: <input type="text" name="item" /></div>
+			<div>Quantity: <input type="text" name="quantity" /></div>
+			<div><input type="submit" /></div>
+		</form>
+
+	</body>
+</html>
