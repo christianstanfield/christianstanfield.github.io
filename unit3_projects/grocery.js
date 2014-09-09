@@ -7,6 +7,9 @@ $(document).ready(function() {
     var aisle = $('input[name=addAisle]').val();
     $('.groceryList').append('<div class="item"> <input type="checkbox" style="display: inline" /> <p style="display: inline">' + quantity + ' ' + item + ' in the ' + aisle + ' aisle.</p></div>');
   });
+  $('input').focus(function() {
+    $('input').css('outline-color','#70AEFF');
+  });
 });
 
 $(document).on('click','.item', function() {
