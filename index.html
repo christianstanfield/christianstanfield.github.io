@@ -1,98 +1,53 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<title>Portfolio | Christian Stanfield</title>
-		<link href='http://fonts.googleapis.com/css?family=PT+Mono' rel='stylesheet' type='text/css'>
-		<link rel="stylesheet" type="text/css" href="stylesheets/style.css">
-		<script type="text/javascript">
-			var linkAppear = function(id) {
-  			var div = document.getElementById(id)
-  			div.style.display = 'none';
-  			var div2 = document.getElementById(id + '2')
-  			div2.style.display = 'inline';
-  			var h1 = div2.querySelector('h1')
-  			h1.style.display = 'inline';
-			};
-			var linkDisappear = function(id) {
-				var div2 = document.getElementById(id + '2')
-  			div2.style.display = 'none';
-  			var h1 = div2.querySelector('h1')
-  			h1.style.display = 'none';
-  			var div = document.getElementById(id)
-  			div.style.display = 'inline';
-			};
-		</script>
-	</head>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Portfolio | Christian Stanfield</title>
+	<meta name="Portfolio of Web Developer and Independent Filmmaker Christian Stanfield">
+	<link href='http://fonts.googleapis.com/css?family=PT+Mono' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://code.jquery.com/ui/1.11.1/jquery-ui.js"></script>
+	<script type="text/javascript" src="script.js"></script>
+</head>
 
-	<body>
+<body>
 
-		<header>
-			<h1 id="name">CHRISTIAN STANFIELD</h1>
-			<h1 id="dev">DEVELOPER</h1>
-			<h1 id="film">FILMMAKER</h1>
-		</header>
+	<header>
+		<h1 id="name">CHRISTIAN STANFIELD</h1>
+		<h1 id="dev">DEVELOPER</h1>
+		<h1 id="film">FILMMAKER</h1>
+	</header>
 
-		<section id="info">
-			<h3>Dev Bootcamp Cohort | September 2014</h3>
-			<ul>
-				<!-- <li class="hide"><a href="https://christianstanfield.github.io/unit1_projects/dbc1.html">Basic HTML</a></li>
-				<li><a href="https://christianstanfield.github.io/unit1_projects/dbc2.html">Basic CSS</a></li> -->
-				
-				<li class="hide"><a href="https://christianstanfield.github.io/blog-posts/week1_technical.html">Fav Websites</a></li>
-				<li><a href="https://christianstanfield.github.io/blog-posts/week1_cultural.html">DBC Culture</a></li>
-				<!-- <li class="hide"><a href="https://christianstanfield.github.io/unit1_projects/wireframe_sites.html">Basic Wireframe</a></li> -->
-				<!-- <li><a href="https://christianstanfield.github.io/gps1-1/gsp1.1.html">Group Pairing</a></li> -->
-				<li><a href="https://christianstanfield.github.io/unit1_projects/starting-point.html">Responsive Design</a></li>
-				<li class="hide"><a href="https://christianstanfield.github.io/blog-posts/week2_technical.html">CSS Box Model</a></li>
-				<li><a href="https://christianstanfield.github.io/blog-posts/week3_technical.html">WUW Javascript?</a></li>
-				<li><a href="https://christianstanfield.github.io/blog-posts/week3_cultural.html">My Learning Style</a></li>
-				<li class="hide"><a href="https://christianstanfield.github.io/javascript_game/game.html">Javascript Game</a></li>
-				<li><a href="https://christianstanfield.github.io/blog-posts/week4_technical.html">Rotating in Ruby</a></li>
-				<li><a href="https://christianstanfield.github.io/blog-posts/week4_cultural.html">The Cost of Free</a></li>
-				<li class="hide"><a href="https://christianstanfield.github.io/blog-posts/week5_technical.html">Using Ruby Classes</a></li>
-				<li><a href="https://christianstanfield.github.io/blog-posts/week5_cultural.html">Pair Programming</a></li>
-				<li><a href="https://christianstanfield.github.io/blog-posts/week6_technical.html">OOP vs Functional</a></li>
-				<li class="hide"><a href="https://christianstanfield.github.io/blog-posts/week6_cultural.html">Stereotypes</a></li>
-				<li><a href="https://christianstanfield.github.io/blog-posts/week7_technical.html">SQL Injection</a></li>
-				<li><a href="https://christianstanfield.github.io/blog-posts/week7_cultural.html">Know Thyself</a></li>
-				<li class="hide"><a href="https://christianstanfield.github.io/unit3_projects/unit3_cheatsheet.html">Javascript Cheatsheet</a></li>
-				<li><a href="https://christianstanfield.github.io/blog-posts/week8_technical.html">How do Computers Work?</a></li>
-				<li class="hide"><a href="https://christianstanfield.github.io/blog-posts/week8_cultural.html">What We Live For</a></li>
-				<li><a href="https://christianstanfield.github.io/unit3_projects/grocery.html">Grocery List App</a></li>
-			</ul>
-		</section>
+	<section id="info">
+		<img src="images/website_creds.png" alt="Ruby on Rails, Javascript, HTML5 and CSS3">
+		<h3>Dev Bootcamp Portfolio | September 2014</h3>
+		<ul>
+			<li class="hide"><a href="https://christianstanfield.github.io/blog-posts/technical.html">Tech Blog</a></li>
+			<li><a href="https://christianstanfield.github.io/blog-posts/cultural.html">Cultural Blog</a></li>
+			<li><a href="https://christianstanfield.github.io/unit1_projects/starting-point.html">Responsive Design</a></li>
+			<li class="hide"><a href="https://christianstanfield.github.io/javascript_game/game.html">Javascript Game</a></li>
+			<li><a href="https://christianstanfield.github.io/unit3_projects/unit3_cheatsheet.html">Javascript Cheatsheet</a></li>
+			<li><a href="https://christianstanfield.github.io/unit3_projects/grocery.html">Grocery List App</a></li>
+		</ul>
+	</section>
 
-		<section class='links'>
-			<a href="https://github.com/christianstanfield">
-				<div id="gh" onmouseover="linkAppear('gh')">
-					<img src="images/git.png">
-				</div>
-				<div id="gh2" onmouseout="linkDisappear('gh')">
-					<img src="images/git.png"><h1>Github</h1>
-				</div>
-			</a>
-			
-
-			<a href="https://www.facebook.com/christian.stanfield">
-				<div id="fb" onmouseover="linkAppear('fb')">
-					<img src="images/fb.png">
-				</div>
-				<div id="fb2" onmouseout="linkDisappear('fb')">
-					<img src="images/fb.png"><h1>Facebook</h1>
-				</div>
-			</a>
-
-			<a href="https://www.linkedin.com/in/christianstanfield">
-				<div id="li" onmouseover="linkAppear('li')">
-					<img src="images/lin.png">
-				</div>	
-				<div id="li2" onmouseout="linkDisappear('li')">
-					<img src="images/lin.png"><h1>LinkedIn</h1>
-				</div>	
-			</a>
-		</section>
+	<section class='links'>
+		<a href="https://github.com/christianstanfield">
+			<div id="gi"><img src="images/git.png" alt="github"><h1>Github</h1></div>
+		</a>
 		
-	</body>
+		<a href="http://vimeo.com/cstanfield">
+			<div id="vi"><img src="images/vim.png" alt="vimeo"><h1>Vimeo</h1></div>
+		</a>
+
+		<a href="https://www.linkedin.com/in/christianstanfield">
+			<div id="li"><img src="images/lin.png" alt="linkedin"><h1>LinkedIn</h1></div>	
+		</a>
+	</section>
+	
+</body>
 </html>
 
 

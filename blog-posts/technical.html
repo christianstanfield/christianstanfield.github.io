@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Tech Blog | Christian Stanfield</title>
+	<link rel="stylesheet" href="stylesheets/blog.css">
+</head>
+	
+<body>
+
+	<header class='headfoot'>
+		<p id="head1">dbc | <span id="red">christian</span> stanfield</p>
+		<p id="head2"><span id="pipe">|</span> <span id="blog">blog</span></p>
+	</header>
+
+	<a href="https://christianstanfield.github.io"><img src="images/back.png" width="50px"></a>
+
+	<section id='toc'>
+		<img src="images/keyboard.png" class="title_img">
+		<h3>Contents</h3>
+		<ul>
+			<li class="hide"><a href="#hdcw">How do Computers Work?</a></li>
+			<li><a href="#sqli">SQL Injection</a></li>
+			<li><a href="#fvoo">Functional vs. Object-Oriented</a></li>
+			<li class="hide"><a href="#vccr">Validating Credit Cards in Ruby</a></li>
+			<li><a href="#tpom">The Power of a Method</a></li>
+			<li class="hide"><a href="#java">What's up with Javascript?</a></li>
+			<li><a href="#csbm">CSS Box Model</a></li>
+			<li><a href="#favw">Favorite Websites</a></li>
+		</ul>
+	</section>
+
+	<section id='hdcw'>
+		<h3 class="art_title">How do Computers Work?</h3>
+		<img src="images/Matrix.jpg" width="500px">
+		<div>
+			<h4>Black Magic</h4>
+			<p>It's a question I've always been interested in. Even though I understand most of the hardware components, what they do and how to build a computer from them, and I understand the software, I can write basic code now and I've even written a program, it's still very mysterious to me how it all ties together. How can I type a few things on a screen and give a sort of life to things? </p>
+			<p>I know it's not a simple topic or easy to summarize or everyone would already know it, but I wanted to take a crack at understanding exactly what was going on behind the magic curtain. </p>
+
+			<h4>Vertigo</h4>
+			<p>I did some research online (using my computer to understand my computer) and I also watched a documentary on Netflix called <a href="http://www.netflix.com/WiMovie/80003158?trkid=2361637&leid=534" target="_blank">American Experience: Silicon Valley</a> about the history of silicon valley and the early days of computers which was really informative.</p>
+			<p>In my research I found there's no easy place to start. The further you look down the rabbit hole the more there is to know. Even <a href="https://en.wikipedia.org/wiki/Quantum_computer" target="_blank">quantum computers</a> are being worked on now which to fully understand you'd need to know quantum mechanics (which I know a little about) but I'm attempting to summarize here so that's a bit beyond the scope of this div. Since we have to draw a line somewhere we can start at the atomic level.</p>
+		</div>
+
+		<img src="images/atom.png" width="500px" style="border-radius: 10px">
+
+		<div>
+			<h4>Electromagnetism</h4>
+			<p>Atoms, whose name comes from the latin/greek root <em>atomos</em> meaning <em>a-</em> not + <em>tomos</em> divisible, were conceptualized as the basic building blocks of all life and matter in the universe. Of course once they were discovered it only took one person to look inside and see beyond the curtain that atoms themselves were made of even smaller sub-atomic particles (which of course are made of even smaller elementary particles, which are made of...) But knowing atoms allows us to understand one of the four fundamental forces or interactions in nature: <a href="https://en.wikipedia.org/wiki/Electromagnetism" target="_blank">electromagnetism</a>. </p>
+			<p>The simpliest explanation as it pertains to computers, is that atoms in their natural balanced state are composed of a specific number of neutrons, protons and electrons. Electrons because of their location outside of the nucleus are the easiest to move around, and atoms which have lost or gained electrons naturally seek to balance themselves out. When in close enough proximity, or when connected via a wire for example, positively charged atoms, those lacking their normal number of electrons, will attract electrons from negatively charged atoms, those having too many electrons, causing electric current. </p>
+		</div>
+
+		<img src="images/tesla.jpg" width="500px">
+
+		<div>
+			<h4>The Path of Least Resistance</h4>
+			<p>So everyone knows electricity is at the heart of computers. Every time your phone or notebook is running low on battery and you're on the hunt for an outlet you're more then aware of that. But how does this help us understand how computers work? </p>
+			<p>We mentioned the wire above, which is one way we're all familiar with for conducting electricity. But not all materials in nature are equal conductors. Some have low electrical resistance and allow electrons to flow easily across them, others have high electrical resistance and make it very difficult for electrons to flow through them. This matters because electricity, like all energy in nature, follows the path of least resistance. Water flows downstream, as they say. This takes us to the invention of the semiconductor. A semiconductor as it sounds, is a material whose properties of conductivity can be altered or changed. An on/off switch of sorts. </p>
+
+			<h4>Switching Logic</h4>
+			<p>Now it starts to get a bit complex. But this is where we start to see the advent of the transistor. In simplest terms, a transistor is just the power of a semiconductor harnessed in a widget. Think of it like an on/off switch but also like a lego. Transistors can be connected to other transistors to trigger each other in chain reactions. It's like a maze for electric current, or like a railroad where depending on which tracks you switch the train will take a different direction. Early computers, see the <a href="https://en.wikipedia.org/wiki/Turing_machine" target="_blank">Turing machine</a> for more information on this, were able to use these controllable electric signals to simulate basic Boolean Logic. Now I am not familiar at all with these concepts, but the ideas behind them seem to be based largely on distinguishing and comparing different things. If you can say that two things are the same, a = a and two things are not the same, a != b then you have the building blocks of logic. And all the various possibilities you need to represent, see <a href="http://en.wikipedia.org/wiki/Logic_gate" target="_blank">logic gates</a> and <a href="https://en.wikipedia.org/wiki/NAND_gate" target="_blank">NAND</a>, to have what is considered to be a functionally complete system which can construct all the truth tables, can be made using these electric signals. We represent these, as we're all familiar with, as 1s and 0s. Which equate to electricity received = 1 and electricity not received = 0. The best way I've come up with to think about it is morse code. With a simple two input system, you can construct any language in the world and say anything that can be said. </p>
+			<p>If the transistors are the computer's nervous system, its memory is the capacitors. Capacitors are objects that simply hold a charge. You can pass in electrons and let out electrons, and check at any time to see if the capacitor is charged. This allows us to store and retrieve whether an electric signal was received, which when represented as 1s and 0s allows us to build logic like morse code. </p>
+			<p>To coordinate and synchronize all this flowing of current and prevent signals from running into one another a computer uses a clock. At its most basic any time counting device is just an object that "ticks" at a regular interval. Those intervals can be added up to measure seconds, days, even eons, but it's all done by counting regular intervals found in nature or using man-made objects. Computers often contain a quartz or similar material with a regular oscillation period which can be measured and utilized. In most computers, CPU operations are done between "ticks" and read/write operations are done during the "ticks" to maintain order and avoid trains running into one another on the track. </p>
+		</div>
+
+		<img src="images/hackers.jpg" width="550px">
+
+		<div>
+			<h4>Language of Nature</h4>
+			<p>So we have this machine that can send electrons around. It can store and "memorize" whether it received a signal. And it can light up pixels on a screen, again a simple on/off signal to a single light-emitting tiny dot. But with 1920 x 1080 of those dots in a row you can see anything in the world in high-definition. Our eyes receive single photons in a similar binary system which are converted to electric signals by our retinas and sent across our nervous system on wires to our brain. And somehow our brain puts together all these on/off signals of light into a "morse code" of what we call vision, and thousands of tiny dots turning on and off into images on a screen including symbols called written language that mean something to us. And we can press on keys and mice and touch pads and send electric signals into the system, which are never more then electric signals. But from them we can construct <a href="https://en.wikipedia.org/wiki/Machine_code" target="_blank">machine code</a>, and from that computer programming languages and suddenly we have a way of making the signals do a particular thing in a particular way. And we give that a name, we call it a 0 or a 1, but from those humble begins we can add them and get another 1. But then those two 1s become a 2 and then a 3 and then all of mathematics. </p>
+		</div>
+
+		<img src="images/fibonacci.jpeg" style="border-radius: 10px">
+
+		<div>
+			<p>It's pretty crazy to think that such complexity in the world can be reduced to something so simple. Truly understanding it all beyond the rabbit hole becomes a question of philosophy. It's the nature of our world that we're just harnessing to our needs in a specific and precise way. We don't need to completely understand it in order to utilize it any more then we need to know how to raise our hand. It's pretty remarkable, from the 0s and 1s of mathematics, to the brushstrokes of painters to the light-sensitive grain of photography. I suppose once you understand that all our senses are captured and transmitted in on/off signals, and that's all we've ever known, that it makes sense we would build our tools around this concept as well. The real magic seems to be in our own brains, that we're able to piece all these signals together into a coherent conscious experience. Whatever that is :)</p>
+		</div>
+
+		<img src="images/candb.jpg">
+
+		<div>
+			<p><em><strong>Additional Resources:</strong></em></p>
+			<p><em><a href="http://www.netflix.com/WiMovie/80003158?trkid=2361637&leid=534" target="_blank">American Experience: Silicon Valley</a></em></p>
+			<p><em><a href="https://www.youtube.com/watch?v=IlPj5Rg1y2w" target="_blank">From Nand to Tetris in 12 steps</a></em></p>
+			<p><em><a href="https://en.wikipedia.org/wiki/Quantum_computer" target="_blank">Quantum Computers</a></em></p>
+			<p><em><a href="https://en.wikipedia.org/wiki/Electromagnetism" target="_blank">Electromagnetism</a></em></p>
+			<p><em><a href="https://en.wikipedia.org/wiki/Turing_machine" target="_blank">Turing Machine</a></em></p>
+			<p><em><a href="http://en.wikipedia.org/wiki/Logic_gate" target="_blank">Logic Gates</a></em></p>
+			<p><em><a href="https://en.wikipedia.org/wiki/NAND_gate" target="_blank">NAND</a></em></p>
+			<p><em><a href="https://en.wikipedia.org/wiki/Machine_code" target="_blank">Machine Code</a></em></p>
+			<p><em><a href="http://programmers.stackexchange.com/questions/81624/how-do-computers-work" target="_blank">How Do Computers Work? - Programmers Stack Exchange</a></em></p>
+		</div>
+		<a href="#head1"><img src="images/up.png" class="up_img"></a>
+	</section>
+
+	<section id="sqli">
+		<h3 class="art_title">SQL Injection</h3>
+		<img src="images/sql.png" width="500px">
+		<div>
+			<h4><a href="http://xkcd.com/327/" target="_blank">Little Bobby Tables</a></h4>
+			<p>Security on the web is definitely an important issue today. The more information, especially sensitive information that gets stored online the more motivation there will be for people to try and gain access to that information. One common way of gaining unauthorized access to a website's database is through SQL injection.</p>
+			<p>Since this is our first week studying databases and SQL, I was curious to know more about the type of vunerabilites databases can have and the type of security that is needed to prevent attacks. I know it is an advanced topic, but from my research it seems to start out simple enough.</p>
+
+			<h4>' OR 1 = 1 --</h4>
+			<p>The basic idea as I understand it, is that when you're taking user-provided information through a form, such as an id or password, and passing it into your database to access information, behind the scenes SQL is being written to talk to the database and handle your requests. So in the above example, entering your username and password triggers the above SQL statement which is sent to the database to verify your identity. If however someone instead of entering a legitimate login, enters SQL code designed to gain access and run instructions on the database, that code is passed in as it comes from the user, and the database only does what it's told.</p>
+		</div>
+
+		<img src="images/tarrifs.jpeg" width="500px" style="border-radius: 3px">
+
+		<div>
+			<h4>Prevention</h4>
+			<p>There are many ways to check for and prevent this type of code from entering into your database queries. They all have been developed over time it seems in what appears to be a cat and mouse game between hackers and security developers. Besides watching the information being entered for bits of code that can do harm and escaping them, other common ways of prevention are to check if a specific entry matches the type of input that was expected, to look for code hidden by comment markers which would otherwise be spotted, alternate methods of preventing information access such as always encrypting passwords and sensitive information before they reach the database, and making methods that directly access important information private, so they cannot be called from the outside by a user.</p>
+		</div>
+
+		<img src="images/CatMouse.jpg" height="350px">
+
+		<div>
+			<h4>Conclusion</h4>
+			<p>I know as we get more into working with databases we'll be learning more about security and vulnerabilities as we go. My main take away from doing research was that just as everytime someone finds a way to jailbreak the iPhone and Apple fixes the vulnerability, someone else comes along to find yet another way to jailbreak it again, so to will website security always be that type of cat and mouse game. Even with all our modern security website breaches and identity theft are still quite common, and techniques as old as SQL injection, which websites have been dealing with for decades are still around in some capacity and not completely a thing of the past. The more important the information we put online and the more of it there is out there, hackers even from other countries across the world will be coming after it. It seems pretty daunting when you think about it that way, but it's not a topic I expect to master anytime soon, only one I look forward to learning more about.</p>
+			<h4>Happy Coding!</h4>
+		</div>
+		<a href="#head1"><img src="images/up.png" class="up_img"></a>
+	</section>
+
+	<section id="fvoo">
+		<h3 class="art_title">Functional vs. Object-Oriented Programming</h3>
+		<img src="images/fp1.png" width="500px">
+		<div>
+			<h4>From a Newbie's Perspective</h4>
+			<p>I chose this topic to research not because I expected to write anything groundbreaking on the subject, or perhaps anything even coherent to someone who already understands the material, but as a beginning programmer I am really interested in the different paradigms and ways of thought behind programming languages and I want to learn as much as I can about them.</p>
+			<p>My first observation after beginning my research, was that there are no easy clear distinctions that are universally agreed upon as the exact differences between functional and object-oriented programming. Although everyone seems to be getting at or trying to get at something roughly similar, it was not as simple as a copy and paste wiki search. The other observation I made pretty quickly is that the descriptions out there are not easy to understand. Not for a beginning programmer and certainly not for someone totally unfamiliar with the material.</p>
+
+			<h4>Frenemies</h4>
+			<p>Another thing I picked up right away is that while some languages are considered to be of one type or another, most authors I read were in agreement that many of the languages also exhibited signs and behaviors from both styles within themselves. That is to say that while certain languages may be considered object-oriented or functional in general, it is not impossible to use them in the opposite context in many cases. Although the lines do blur in some areas, there was a general agreement on the main distinctions of the philosophies.</p>
+		
+			<h4>Software Evolution</h4>
+			<p>One of the best descriptions I read articulating why someone would choose one language over another had to do with the lifecycle and evolution of their program.</p>
+		</div>
+
+		<img src="images/oop.png">
+
+		<div>
+			<p>That made sense to me, because I know how important laying a solid foundation can be when beginning a new project or application. How you choose to set things up in the beginning will have a greater and greater effect the larger your program grows. Adding new functionality or having to make modifications can vary anywhere from minutes to days of work depending on how you chose to structure your code to start with, and choosing a language based on the type of additional work you see yourself doing down the road does make a lot of sense to me.</p>
+
+			<h4>Building Blocks</h4>
+			<p>Another concept I came across that was helpful in my beginning to distinguish the differences between languages was the idea of a central building block. A concept or capability of the code that you would organize everything else around.</p>
+			<p>In this case, the difference was explained to me as follows: The basic building block of functional programming is the function. It takes an input, performs some sort of operation on it and returns an output. Everything else is designed to either be passed into one of these functions or grab the result that one of them returns. Of course object-oriented languages also have functions which are used in the same way, but the idea here is that these are the central building block of your application around which you will contruct everything else. And whether you want to use a functional programming language depends on whether it makes sense to build your program this way.</p>
+			<p>In object-oriented programming however, the central building block is the object itself, or class. Your functions in this model will primarily exist between and upon these objects and their attributes. The thinking and the design revolves around things that do things to other things, instead of doing things to things for other things that do things.</p>
+		</div>
+
+		<img src="images/3Paradigms.png">
+
+		<div>
+			<h4>Conclusion</h4>
+			<p>So like I said in the beginning, I was not hoping to master this topic or walk away having seen it in a brand new light for everyone. My primary take away from all of this was that the differences between programming languages are not obvious or easy to understand for those who are unfamiliar with them and even amongst those who know them well there is not complete uniformity of concensus. I have however in doing this research at least begun to understand some of the differences and for that I am grateful. Having only ever used or been exposed to object-oriented languages, and being relatively new to all of them at that, I don't expect to ever fully understand or apprieciate the differences until I've had a chance to sit down and beginning programming in a functional language. But I look forward to the time I have that opportunity, and I know I will always learn more about what I'm most familiar with by learning about that which is totally different.</p>
+			<h4>Happy Coding!</h4>
+		</div>
+		<a href="#head1"><img src="images/up.png" class="up_img"></a>
+	</section>
+
+	<section id='vccr'>
+		<h3 class="art_title">Validating Credit Cards in Ruby</h3>
+		<img src="images/ab.jpeg">
+		<div>
+			<h4>Using a Ruby Class</h4>
+			<p>If you've ever wanted to check a credit card number to see if it's valid, either for your website or an application, you can do it in Ruby using a class method.</p>
+			<p>The <a target="_blank" href="http://en.wikipedia.org/wiki/Luhn_algorithm">Luhn algorithm</a> is one way of doing this. In the example below we start with a number 4563 9601 2200 1999 that we want to validate. The first step is to double every other number starting from the second to last. Once that is done you'll need to add all the numbers together, also adding any two-digit numbers as though they were two separate numbers. So for example, 12 when calculating the total becomes 3, or 1 + 2. If the sum of all the numbers is divisible by 10, then you know the number is valid.</p>
+		</div>
+
+		<img src="images/luhn.png">
+
+		<div>
+			<h4>Working with the Code</h4>
+			<p>Classes in Ruby are defined in CamelCase following the word class. Everything between where you declare the class and its end statement is inside or part of the class. Like objects in real life, classes primarily consist of attributes and actions or methods. An initialize method is a special kind of class method that can take arguments or parameters passed into the class when an instance is created and make them available to any other methods of that same class. Below we have an initialize method that takes a number and returns an argument error if the number is less then or greater then 16 digits.</p>
+		</div>
+
+		<img src="images/code.png">
+
+		<div>
+			<p>Our second class method is what checks the number and validates if it's a real credit card. To do this in Ruby we start by creating a variable to hold the final sum, and assign it a value of 0 to start. Then we need to find a way to iterate over the digits of our number in reverse and starting with the second to last, skipping one digit in-between. We began this process in our initialize method by taking our input parameter <em>card</em> and splitting each digit onto an array by first converting it to a string. This was then saved as an instance variable <em>@card_array</em> which we also used to calculate the length when checking for our argument error.</p>
+			<p>Because we're using an instance variable, this value can now be passed throughout the class every time or instance we call it. To iterate in reverse over our number (now an array of individual digits) we can start with a value of 2 and point to its negative on the index. Arrays can hold negative indexes, so [-1] is the last element of the array and [-2] is the one we want, the second to last.</p>
+			<p>Then by adding 2 each time, we can move backward (-4, -6, etc) over the array doubling each number until we reach the beginning, where our (positive) number is greater then the length +1. Then to separate the double-digit numbers we can join all the numbers into one and then re-break them apart, splitting the double-digits in the process. After that we just need to iterate over the new array adding each separate number to our sum from the beginning. And if we calculate that our total is divisible by 10, we return true. If not, false.</p>
+			<p>To call the method we create a new instance of the class: <em>CreditCard.new(4408041234567893)</em>, pass in our number, save it as a variable and run the method: <em>card.check_card</em> to validate if it's real. And that's how you can use a Ruby class to validate a credit card number.</p>
+			<h4>Happy Coding!</h4>
+		</div>
+		<a href="#head1"><img src="images/up.png" class="up_img"></a>
+	</section>
+
+	<section id='tpom'>
+		<h3 class="art_title">The Power of a Method</h3>
+		<img src="images/rotate.png">
+		<div>
+			<h4>Rotating in Ruby</h4>
+			<p>As a new programmer in general, as well as being new to Ruby, there seems to be from the newcomer's perspective an endless number of methods out there for every purpose one can think of. Often I'll find myself writing code to accomplish some task I'm after only to realize after the fact that there was a method already developed to do exactly that with a single line of code.</p>
+			<p>One of our challenges in Phase 0 was to write a program that would assign each member into groups of 4, three different times without placing two students in the same group twice. Although I knew it was easy to randomize numbers in any programming language, and I could separate out groups in sections of 4, finding a method to make sure no student would end up with another student more then once proved to be a task far beyond aynthing I'd done before.</p>
+
+			<h4>The Hard Way</h4>
+			<p>Of course the first set of groups there was no way to fail. Simply section everyone off in fours in any order and that was good enough. The second set is where the challenge began, but with a little thought I was able to develop a method using what I knew to create something that by all appearances would never place the same two students together into the same group, no matter how many times it was run.</p>
+			<p>The third and final set however is where I got stuck. I ended up doing some reseach and came across <a href="http://chronicle.com/blogs/profhacker/assigning-students-to-small-groups/26557" target="_black">this method</a> by a teacher who split his classes into similar groups using a pen and paper:</p>
+		</div>
+
+		<img src="images/classes.png">
+
+		<div>
+			<h4>The Easy Way</h4>
+			<p>This confirmed the patterns I had used for the first two sets of groups and appeared to solve my problem for the third. Only implementing this solution proved to be far more challenging then I imagined.</p>
+			<p>Besides the larger pool of students that I was working with, which required mathematical adjustments to this teacher's solution which were difficult to translate, his work was primarily relying on shifting rows and columns in ways that were easy on paper, but far beyond my knowledge of how to program. It may not be readily apparent by looking, but the difference between the first two sets above is accomplished by taking each horizontal row and flipping it into a vertical column. A similar approach is taken to the third set, but with an additional shift in the columns. I had prior to this figured out how to code the first two without needing to turn rows into columns or shift them around, but the third was proving too difficult.</p>
+			<p>At last I came across another pattern I could identify, and therefore code, in the third variant. It took me leaving and coming back to it over the better part of a day, but at long last it worked. I had a program that would randomize students into groups of 4 without ever placing any two students together twice.</p>
+			<p>And then I discovered the Ruby method rotate. On the surface it's simple enough. It takes an array and shifts the whole line to any amount you specify. In one line of code I could accomplish what I'd spent the better part of a day coding around to achieve the same result. Technically both programs yield the same answer, my approach was not wrong in the sense that it failed, but had I known of this simple method, I could have turned a day's work into a minute's. And that's how I learned the power of Ruby methods.</p>
+			<h4>Happy Coding!</h4>
+		</div>
+		<a href="#head1"><img src="images/up.png" class="up_img"></a>
+	</section>
+
+	<section id='java'>
+		<h3>What's up with Javascript?</h3>
+		<a href="https://www.cs.purdue.edu/sss/projects/dynjs/" target="_blank"><img src="images/js.jpg" width="350px"></a>
+		<div>
+			<h4>History</h4>
+			<p>I'm totally new to Javascript, so I did some research to figure out what it's all about.</p>
+			<p>Javascript began at Netscape in the early 1990's as a way to add interactivity to web pages. Since then it's grown to become a prevalent force on the internet.</p>
+
+			<h4>It's fast</h4>
+			<p>One reason for Javascript's success is its ability to add dynamic content and interactivity to a website without requiring access to a server. Before Javascript the kind of functionality that it delivers required constant communication back and forth between the browser and server. Javascript allows for much of this work to be handled considerably faster without the need to wait for sending and receiving messages.</p>
+			<p>Javascript also allows you to add your code to a page and without having to compile or load a virtual machine you can see your changes right away. This greatly speeds up the process of testing code for developers and makes development and updates much easier.</p>
+
+			<h4>It's powerful</h4>
+			<p>Another reason Javascript has become so popular is because it's an object-oriented language. Having been based on Java and (to a lesser extent) C++, this makes Javascript an ideal way to interact with objects on your website. The way it interacts with the DOM and HTML also gives it the ability to manipulate web pages on a deep level.</p>
+			
+			<h4>It's supported</h4>
+			<p>Because Javascript has been around for awhile and steadily grown in its use, most if not all modern browsers have great support for it, meaning you can expect the same functionality across all your users' experiences. This element is crucial to Javascript's success, and the more that it grows in use the more support will continue to stick around. </p>
+		</div>
+
+		<a href="https://www.cs.purdue.edu/sss/projects/dynjs/" target="_blank"><img src="images/js.png"  width="350px"></a>
+
+		<div>	
+			<h4>Conclusion</h4>
+			<p>Of course not everything about Javascript is well-received.</p>
+			<p>The main issues with the language from what I uncovered seem to be about security. Of course anytime you have a powerful tool at your disposal and users can interact with that tool that leaves open the possibilty of malicious input invading your code. For this reason many browsers also come with an ability to disable Javascript, and users may choose to do so for their own security. This runs into one of the biggest keys to Javascript's success, its ubiquity of support. Although it may not be likely to derail Javascript's growth anytime soon, it does remain an achilles heal that could one day be exploited by a newer more secure language with equal abilities.</p>
+			<h4>Happy Scripting!</h4>
+		</div>
+		<a href="#head1"><img src="images/up.png" class="up_img"></a>
+	</section>
+
+	<section id='csbm' style="border: 5px solid black">
+		<h3>CSS Box Model</h3>
+		<img height="442" width="742" src="images/cssbox.png">
+		<div>
+			<h4>Content</h4>
+			<p>Every element (each thing) in your HTML is considered a block (basically a box as in the CSS Box Model). In the image above you can see an example of how this works.</p>
+			<p>Your content (typically text or an image) is the centerpiece of this block around which is built the padding, border and margin.</p>
+			<h4>Border</h4>
+			<p>The border of your content sits between the margin and padding, dividing the two. It's the most straightforward element which acts exactly as you would expect a border to do. It has it's own properties which you can set, such as the size, the color and the type (solid, dashed line, etc). The border around this block here you can see is black, solid and 5 pixels in size.</p>
+			<p>A border is not required for all content. It still exists to separate the margin from the padding, but every border will appear transparent by default if no attributes are set.</p>
+			<h4>Padding</h4>
+			<p>Padding sits between your content and the border. On this text you can see there's a space between the edge and the black border and that's its padding.</p>
+			<p>You can set the size of the padding to whatever you like, and if your content has a background color the padding will also take on that same attribute.</p>
+			<h4>Margin</h4>
+			<p>Last but not least is the margin. As you can see in the image, the margin sits outside of your border and is transparent. Functionally it's the exact same idea as your padding, except it defines the space between the edge of your border and the other outside objects around it.</p>
+			<p>You can see the outer edge of this border is separated nicely from the header above and the footer below. That's the margin in action. If no margin were set all these elements would be piled on top of one another back to back looking rather messy.</p>
+			<h4>Conclusion</h4>
+			<p>Now that you understand the Box Model of each element in your HTML and how they interact with each other you can use CSS to set the attributes for each as you like.</p>
+			<p>There's one last thing that we didn't cover, but you can see it in the image above. Each one of these elements within it has four distinct parts. Besides adjusting any of them on every side equally, you can also specify to make adjustments to only one side at a time. So for example, you can set the top margin of your content to be a different size then the left or right margin. This works with all of the elements we just discussed and gives you the complete freedom to design your website however you like.</p>
+			<h4>Happy Designing!</h4>
+		</div>
+		<a href="#head1"><img src="images/up.png" class="up_img"></a>
+	</section>
+
+	<section id="favw">
+		<h3><a href="http://soundcloud.com">soundcloud.com</a></h3>
+		<img height="442" width="742" src="images/soundcloud.png">
+		<div>
+			<p>Soundcloud is great because it opens the door for smaller independent musicians to make their work visible and get noticed. Other music streaming sites like Spotify and Pandora feature mostly well-established recording artists, but Soundcloud is a place where you can listen to work from up-and-coming artists who haven't made it big yet.</p>
+			<p>The part of the site that definitely draws the eye is the main feed, which is logical. Soundcloud is structured in a way that your stream is all the posts from the artists you follow in order of their release. Like the newsfeed on Facebook.</p>
+			<p>Visually it's not anything too out of the ordinary. It's utilitarian, minimalist, clean, open and organized.</p>
+			<p>What Soundcloud does is creates a community for independent musicians and djs and a place where anyone can hear and comment on their work.</p>
+			<p>The content is quite varied, in many ways the opposite of the clean design. Anyone can post to the site, so it's a mix of amazing, fresh, ridiculous and strange.</p>
+			<p>Navigating the site isn't the most intuitive. You have access to your stream which is posts and re-posts from who you follow, but also separately your likes which have their own feed, and your friends/the artists you follow who are only accessible after clicking on your name in the menubar. The menubar is always present but most of the options are buried in a dropdown menu. The content itself is all contained in scrolling feeds which are pretty straightforward. And there is a searchbar if you know what you're looking for.</p>
+			<p>Probably the biggest problem with Soundcloud is it can feel like wading through vast varieties of music with no organization much of the time. Your stream isn't customizable and the only way to navitage it is to scroll through everthing in real time which means looking through every post of every person you follow. When you find something you like you can "like" it but that doesn't add it to either your stream or your friends' streams. Re-posting will add it to their streams and yours, but as soon as more posts come in it'll get buried deep in the feed and lost pretty quickly. And there's no way to rate songs or hear more music similar to what you've rated like Pandora.</p>
+			<p>The nice part about Soundcloud is that it is free for listeners and there are no ads. They do charge if you want to post your own original material beyond the first few, so ironically it's the artists that have to pay, but ideally if your work's good enough Soundcloud can get you the exposure and recognition you're looking for. A few of my friends are djs who post their sets on Soundcloud, but personally I've never paid to post anything myself.</p>
+		</div>
+		<a href="#head1"><img src="images/up.png" class="up_img"></a>
+	</section>
+
+	<section>
+		<h3><a href="http://springpad.com">springpad.com</a></h3>
+		<img height="442" width="742" src="images/springpad.jpeg">
+		<div>
+			<p>I was a big fan of Springpad before it closed down. It was very similar to Evernote in concept but so much better in execution for a visual person.</p>
+			<p>The content, and especially images is definitely what drew your eye when you were there. Like Evernote you have notebooks and notes which can be anything, but instead of being plain brown your notebooks are made up of the images from your posts. For a visual person this makes them so much easier to quickly identify and browse through, and gives you a window into their contents before you even open them.</p>
+			<p>Aside from a simple menubar at the top, visually all you saw was either your notebooks or notes, primarily represented by images with a title and optional brief description. It was clean, striking, simple, well-considered and well-organized.</p>
+			<p>Besides allowing you to save anything as a note and organize your digital life, what also set Springpad apart from Evernote was the social aspect. Besides sharing notebooks with friends which you can do in Evernote, Sprindpad let you make any of your notebooks public to share with anyone on the site. You could browse through other people's collections and follow any that you liked.</p>
+			<p>The content was 100% user generated so of course it varied quite a bit, but unlike Soundcloud it was very well organized and easy to browse through. The notebooks were usually themed and focused and themselves were organized into categories that made it easy and convenient to browse.</p>
+			<p>Navigating the site was very straightforward. The menubar at the top was simple and everything was one click away. Besides that there was only your content and how you organized it was very customizable. Clicking on any note opened it on top of everything else until you clicked away.</p>
+			<p>Because of the clean out-of-your-way design and easy organization of content, and especially with the social aspect, it was easy to lose a few hours on the site browsing through old things and discovering new ones.</p>
+			<p>As far as I was aware Springpad was not monetized in any way, which is perhaps why it closed down. There was never anything to buy or any ads, and they may have struggled finding a way to make money with the site. It would be great to see them return someday or another site like them to come along.</p>
+		</div>
+		<a href="#head1"><img src="images/up.png" class="up_img"></a>
+	</section>
+
+	<section>
+		<h3><a href="http://vimeo.com">vimeo.com</a></h3>
+		<img height="442" width="742" src="images/vimeo.png">
+		<div>
+			<p>Vimeo has done a great job of defining itself as a community for independent filmmakers. While it's similar to Youtube in that anyone can create an account and upload any kind of video, Vimeo has managed to leave Youtube as the place for cat videos and video selfies and attract content from actual filmmakers.</p>
+			<p>Vimeo doesn't seem to really have a "homepage". When you login you're taken to a feed of videos from people you follow, and content is organized in many different ways with a menubar that expands into more menubars of options. When you're watching an actual video it definitely is a cleaner environment then Youtube. The screen isn't cluttered with other related videos, you can reach them easily by scrolling up or clicking on a bookmark tag, but the video you're watching is definitely the focus of your attention.</p>
+			<p>Visually the site definitely focuses on the content. There are always links giving you more ways to explore everywhere you look, but it doesn't get in the way nearly as bad as Youtube. Once you upload a video you can choose the thumbnail picture to represent it, and wherever you go on the site that's mostly what you see. Visually it's a mix of clean and busy, focused and maze-like, out-of-your-way and in-your-face at the same time.</p>
+			<p>What I really appreciate about Vimeo is what it offers smaller independent filmmakers. In many ways it's very similar to Soundcloud except for video instead of music. It doesn't get the "eyes" of Youtube, not as many people know about it or watch it, but it's a place you can share your work and watch others' without being surrounded by the circus that is Youtube.</p>
+			<p>The content like all these sites is user-generated, so the variety is definitely there, but at the same time it's very focused. It's a place only for the works of filmmakers and artists. It's all genres, funny, sad, scary, amazing and bizarre.</p>
+			<p>I've never spent a lot of time exploring Vimeo. Usually I end up there from seeing videos on other sites. But it's a community most if not all of my filmmaker friends share and have content on, and there's always more to see. You could easily lose a few hours exploring and watching videos.</p>
+			<p>Similar to Soundcloud, Vimeo's content is free to watch and there's never any ads, and it's the content creators who monetize the site. It is free also like Soundcloud to upload material to a limited extent, but upgrading to a paid account gives you access to all their features. I used to pay for a pro account although I let it expire and haven't re-upgraded in some time.</p>
+		</div>
+		<a href="#head1"><img src="images/up.png" class="up_img"></a>
+	</section>
+
+	<footer class='headfoot'>
+		<p><span id="red">2014</span> &#169; i foot thee</p>
+	</footer>
+
+</body> 
+</html>

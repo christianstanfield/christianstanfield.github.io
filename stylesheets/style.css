@@ -5,19 +5,8 @@ body {
 	background-position: 0px -200px;
 }
 
-h3 {
-	margin-left: 56px;
-	color: #28697f;
-	font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;	
-}
 
-a {
-	text-decoration: none;
-	color: #28697f;
-	font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
-}
-
-a:hover { text-decoration: underline; }
+/* Header */
 
 header { position: relative; } 
 
@@ -49,11 +38,26 @@ header h1 {
 	color: #009401;
 }
 
+
+/* Info */
+
 #info {
 	position: absolute;
-	top: 525px;
+	top: 500px;
 	left: 550px;
 	width: 550px;
+	height: 500px;
+}
+
+#info img {
+	width: 400px;
+	margin-left: 50px;
+}
+
+h3 {
+	margin-left: 56px;
+	color: #28697f;
+	font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;	
 }
 
 li { 
@@ -63,61 +67,63 @@ li {
 	margin-right: 30px; 
 }
 
+a {
+	text-decoration: none;
+	color: #28697f;
+	font-family: Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
+}
+
+a:hover { text-decoration: underline; }
+
 .hide { list-style-type: none; }
+
+
+/* Links */
 
 .links { position: relative; }
 
 .links div { 
-	position: absolute; 
-	width: 250px;
+	width: 200px;
+	height: 70px;
+	position: absolute;
 	-webkit-transform: rotate(-25deg);
 	-ms-transform: rotate(-25deg);
 	transform: rotate(-25deg);
 }
 
-#gh {
-	top: 175px;
+#gi {
+	top: 185px;
 	left: 455px;
 }
 
-#gh2 {
-	top: 194px; 
-	left: 415px; 
-	display: none;
-}
-
-#fb {
-	top: 250px;
-	left: 525px;
-}
-
-#fb2 {
-	top: 269px;
-	left: 485px;
-	display: none;
+#vi {
+	top: 258px;
+	left: 515px;
 }
 
 #li {
-	top: 325px;
-	left: 590px;
-}
-
-#li2 {
-	top: 344px;
-	left: 550px;
-	display: none;
+	top: 339px;
+	left: 595px;
 }
 
 .links h1 {
 	font-size: 2em;
 	color: white;
 	display: none;
-	margin-left: 25px;
 	position: absolute;
 	top: -5px;
+	left: 90px;
 }
 
+.links img { 
+	height: 80px; 
+	-webkit-transform: rotate(25deg);
+	-ms-transform: rotate(25deg);
+	transform: rotate(25deg);
+}
 
-#li2 h1 { top: 0px; }
+#vi img { height: 90px; }
 
+#vi h1 { top: 0px; left: 95px; }
 
+#li h1 { left: 100px; }
