@@ -16,19 +16,33 @@ header {
     -ms-transform: rotate(1deg);
     -o-transform: rotate(1deg);
     -moz-transform: rotate(1deg);
-    /* Rotation */
+
+    /* Rotation Animation */
+    -webkit-perspective: 600px;
+    -ms-perspective: 600px;
+    -o-perspective: 600px;
+    -moz-perspective: 600px;
+    perspective: 600px;
+
+    -webkit-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+  }
+  .flip {
+    -webkit-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+  }
+  .ease-in {
     -webkit-transition: all 1s ease-in-out;
     -moz-transition: all 1s ease-in-out;
     -o-transition: all 1s ease-in-out;
     -ms-transition: all 1s ease-in-out;
     transition: all 1s ease-in-out;
-  }
-  .rotated {
-    transform: rotate(-1deg);
-    -ms-transform: rotate(-1deg);
-    -webkit-transform: rotate(-1deg);
-    -o-transform: rotate(-1deg);
-    -moz-transform: rotate(-1deg);
   }
   #title {
     position: absolute;
@@ -45,7 +59,9 @@ header {
   }
   #name {
     -webkit-transform: rotate(-25deg);
+    -moz-transform: rotate(-25deg);
     -ms-transform: rotate(-25deg);
+    -o-transform: rotate(-25deg);
     transform: rotate(-25deg);
     font-size: 2.4em;
   }
@@ -53,6 +69,8 @@ header {
     top: -15px;
     left: 260px;
     -webkit-transform: rotate(-10deg);
+    -moz-transform: rotate(-10deg);
+    -o-transform: rotate(-10deg);
     -ms-transform: rotate(-10deg);
     transform: rotate(-10deg);
   }
@@ -60,6 +78,8 @@ header {
     top: 10px;
     left: 330px;
     -webkit-transform: rotate(-3deg);
+    -moz-transform: rotate(-3deg);
+    -o-transform: rotate(-3deg);
     -ms-transform: rotate(-3deg);
     transform: rotate(-3deg);
   }
@@ -67,6 +87,8 @@ header {
     top: 65px;
     left: 100px;
     -webkit-transform: rotate(-5deg);
+    -moz-transform: rotate(-5deg);
+    -o-transform: rotate(-5deg);
     -ms-transform: rotate(-5deg);
     transform: rotate(-5deg);
   }
@@ -74,6 +96,8 @@ header {
     top: 95px;
     left: 200px;
     -webkit-transform: rotate(-2deg);
+    -moz-transform: rotate(-2deg);
+    -o-transform: rotate(-2deg);
     -ms-transform: rotate(-2deg);
     transform: rotate(-2deg);
   }

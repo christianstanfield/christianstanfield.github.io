@@ -1,11 +1,11 @@
-// array contains method:
+// adding array contains method:
 Array.prototype.contains = function ( needle ) {
   for (var i in this) {
     if (this[i] == needle) return true;
   }
   return false;
 };
-
+// -------------------------------------- //
 // returns a random font
 var randomFont = function () {
 
@@ -28,13 +28,13 @@ var randomizeFont = function (word) {
   });
   $(word).html(newWord);
 };
-
+// -------------------------------------- //
 // returns any number of random colors based on the parameter
 var randomColors = function (numOfColors) {
 
-  var colors = ['rgb(245, 245, 245)',
+  var colors = ['rgb(240, 240, 240)',
                 'rgb(53, 103, 135)',
-                'rgb(33, 33, 33)',
+                'rgb(144, 139, 95)',
                 'rgb(23, 45, 59)'];
   var randomColors = [];
 
@@ -65,7 +65,7 @@ var setColors = function (objects, colors) {
   $.each(objects, function (i, object) {
     var j = i-1;
     if (j < 0) {
-      j = objects.length+1;
+      j = colors.length-1;
     }
     setColor(object, colors[i], colors[j]);
   });
@@ -96,7 +96,7 @@ var unusedColors = function (usedColors) {
   });
 
   while (colors.length < 2) {
-    var randomColor = randomColors(1);
+    var randomColor = randomColors(1)[0];
     if (colors.contains(randomColor)) {
     } else {
       colors.push(randomColor);
@@ -115,26 +115,36 @@ var differentColor = function (color) {
   }
   return newColor;
 };
-
+// -------------------------------------- //
 var loadHeader = function () {
-
-  $('header img').css('border-color', randomColors(1));
-
+  // selects 3 random but unique colors for title divs and matching fonts
   var $title = $('#title div');
   var colors = randomColors($title.length);
   setColors($title, colors);
-
+  // randomizes each letter of each word
   $('h1').each(function () {
     randomizeFont(this);
   });
+  // matches image border to title div of my name
+  var nameColor = $('#name').css('background-color');
+  $('header img').css('border-color', nameColor);
 };
-
+// -------------------------------------- //
 $(function() {
 
   // on page load:
   loadHeader();
 
   // on mouseover:
+  $('header img').hover(function(){
+    $(this).addClass('ease-in');
+    var currentColor = $(this).css('border-color');
+    $(this).css('border-color', differentColor(currentColor));
+    $(this).addClass('flip');
+  },function(){
+    $(this).removeClass('flip');
+  });
+
   $('#title div').on('mouseenter', function () {
     var colors = unusedColors( siblingColors(this) );
     setColors([this], colors);
@@ -144,15 +154,5 @@ $(function() {
     $(this).children().each(function () {
       randomizeFont(this);
     });
-  });
-
-  $('header img').on('mouseenter', function () {
-    var currentColor = $(this).css('border-color');
-    $(this).css('border-color', differentColor(currentColor));
-    $(this).toggleClass('rotated');
-  });
-
-  $('header img').on('mouseleave', function () {
-    $(this).toggleClass('rotated');
   });
 });
