@@ -5,6 +5,13 @@ Array.prototype.contains = function ( needle ) {
   }
   return false;
 };
+
+Array.prototype.doesNotContain = function ( needle ) {
+  for (var i in this) {
+    if (this[i] == needle) return false;
+  }
+  return true;
+};
 // -------------------------------------- //
 // returns a random font
 var randomFont = function () {
@@ -29,7 +36,7 @@ var randomizeFont = function (word) {
   $(word).html(newWord);
 };
 // -------------------------------------- //
-// returns any number of random colors based on the parameter
+// returns any number of random colors
 var randomColors = function (numOfColors) {
 
   var colors = ['rgb(240, 240, 240)',
@@ -43,8 +50,7 @@ var randomColors = function (numOfColors) {
   } else {
     while (randomColors.length < numOfColors) {
       var randomColor = colors[Math.floor(Math.random() * colors.length)];
-      if (randomColors.contains(randomColor)) {
-      } else {
+      if (randomColors.doesNotContain(randomColor)) {
         randomColors.push(randomColor);
       }
     }
@@ -89,31 +95,35 @@ var unusedColors = function (usedColors) {
 
   var colors = [];
   $.each(randomColors('all'), function (i, color) {
-    if (usedColors.contains(color)) {
-    } else {
+    if (usedColors.doesNotContain(color)) {
       colors.push(color);
     }
   });
 
   while (colors.length < 2) {
     var randomColor = randomColors(1)[0];
-    if (colors.contains(randomColor)) {
-    } else {
+    if (colors.doesNotContain(randomColor)) {
       colors.push(randomColor);
     }
   }
   return colors;
 };
 // return a different color from the parameter
-var differentColor = function (color) {
+var differentColor = function (unwantedColors) {
   var newColor = '';
   while (newColor === '') {
     var randomColor = randomColors(1);
-    if (color != randomColor) {
+    if (unwantedColors.doesNotContain(randomColor)) {
       newColor = randomColor;
     }
   }
   return newColor;
+};
+// -------------------------------------- //
+var animateColorRotation = function (object, colorArea, colors, animation) {
+  $(object).addClass('ease-in');
+  $(object).css(colorArea, differentColor(colors));
+  $(object).addClass(animation);
 };
 // -------------------------------------- //
 var loadHeader = function () {
@@ -136,21 +146,24 @@ $(function() {
   loadHeader();
 
   // on mouseover:
-  $('header img').hover(function(){
-    $(this).addClass('ease-in');
+  $('header img').hover(function () {
     var currentColor = $(this).css('border-color');
-    $(this).css('border-color', differentColor(currentColor));
-    $(this).addClass('flip');
-  },function(){
+    animateColorRotation(this, 'border-color', [currentColor], 'flip');
+  }, function () {
     $(this).removeClass('flip');
   });
 
-  $('#title div').on('mouseenter', function () {
-    var colors = unusedColors( siblingColors(this) );
-    setColors([this], colors);
+  $('i').hover(function () {
+    var currentColor = $(this).css('color');
+    animateColorRotation(this, 'color', [currentColor, 'rgb(240, 240, 240)'], 'spin');
+  }, function () {
+    $(this).removeClass('spin');
   });
 
-  $('#title div').on('mouseleave', function () {
+  $('#title div').hover(function () {
+    var colors = unusedColors( siblingColors(this) );
+    setColors([this], colors);
+  }, function () {
     $(this).children().each(function () {
       randomizeFont(this);
     });

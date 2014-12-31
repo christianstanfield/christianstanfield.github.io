@@ -3,21 +3,22 @@ header {
   height: 550px;
   width: 100%;
 }
-  header img {
-    position: absolute;
-    top: 120px;
-    left: 150px;
-    width: 300px;
-    border-color: rgb(255, 249, 247);
-    border-style: solid;
-    border-width: 10px 10px 30px 10px;
-    transform: rotate(1deg);
-    -webkit-transform: rotate(1deg);
-    -ms-transform: rotate(1deg);
-    -o-transform: rotate(1deg);
-    -moz-transform: rotate(1deg);
 
-    /* Rotation Animation */
+header img {
+  position: absolute;
+  top: 120px;
+  left: 150px;
+  width: 300px;
+  border-color: rgb(255, 249, 247);
+  border-style: solid;
+  border-width: 10px 10px 30px 10px;
+  transform: rotate(1deg);
+  -webkit-transform: rotate(1deg);
+  -ms-transform: rotate(1deg);
+  -o-transform: rotate(1deg);
+  -moz-transform: rotate(1deg);
+}
+  .animation, i {
     -webkit-perspective: 600px;
     -ms-perspective: 600px;
     -o-perspective: 600px;
@@ -44,13 +45,14 @@ header {
     -ms-transition: all 1s ease-in-out;
     transition: all 1s ease-in-out;
   }
-  #title {
-    position: absolute;
-    top: 70px;
-    left: 500px;
-    width: 600px;
-  }
-  header h1 {
+
+#title {
+  position: absolute;
+  top: 70px;
+  left: 500px;
+  width: 600px;
+}
+  #title h1 {
     position: absolute;
     background-color: rgb(255, 249, 247);
     border-color: rgb(255, 249, 247);
@@ -101,3 +103,26 @@ header {
     -ms-transform: rotate(-2deg);
     transform: rotate(-2deg);
   }
+
+#social {
+  margin: 15px;
+}
+  i {
+    margin-right: 10px;
+    color: rgb(23, 45, 59);
+  }
+  .spin {
+    -webkit-transform: rotateX(180deg);
+    -ms-transform: rotateX(180deg);
+    -o-transform: rotateX(180deg);
+    -moz-transform: rotateX(180deg);
+    transform: rotateX(180deg);
+  }
+
+#projects {
+  position: absolute;
+  top: 465px;
+  left: 50px;
+  color: rgb(240, 240, 240);
+  font-size: 2.6em;
+}
