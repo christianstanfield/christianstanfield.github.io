@@ -35,6 +35,19 @@ var randomizeFont = function (word) {
   });
   $(word).html(newWord);
 };
+// fades in each letter of spanned word
+var fadeInLetters = function (word) {
+
+  var letters = $(word).children();
+  $(word).text('');
+
+  var i = 0;
+  var fade = setInterval(function () {
+    $(letters[i]).appendTo($(word)).hide().fadeIn(1000);
+    i += 1;
+    if (i >= letters.length) clearInterval(fade);
+  }, 200);
+};
 // -------------------------------------- //
 // returns any number of random colors
 var randomColors = function (numOfColors) {
@@ -138,6 +151,8 @@ var loadHeader = function () {
   // matches image border to title div of my name
   var nameColor = $('#name').css('background-color');
   $('header img').css('border-color', nameColor);
+
+  fadeInLetters('#projects');
 };
 // -------------------------------------- //
 $(function() {

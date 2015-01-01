@@ -128,3 +128,16 @@ header img {
   color: rgb(240, 240, 240);
   font-size: 2.6em;
 }
+
+/* .transparent {
+  opacity: 0;
+  -webkit-transition: opacity 2s ease-in;
+  -moz-transition: opacity 2s ease-in;
+  -o-transition: opacity 2s ease-in;
+  -ms-transition: opacity 2s ease-in;
+  transition: opacity 2s ease-in;
+}
+  .fadeIn {
+    opacity: 1;
+  }
+ */
