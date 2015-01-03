@@ -11,7 +11,6 @@
   <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
   <script src="skrollr.min.js"></script>
   <script type="text/javascript" src="header.js"></script>
-  <script type="text/javascript" src="parallax.js"></script>
   <!-- FONTS -->
   <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
   <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
@@ -51,7 +50,7 @@
     <h3>I’m a web developer and independent film producer with a passion for projects that change the way we view the world.</h3>
     <h3>My background in creative roles, management and several years of running my own business.</h3>
     <h3>I’ve built apps in Ruby on Rails and Javascript. I’ve dabbled in WebSockets and Arduino, and recently built a robot.</h3>
-</div>
+  </div>
 
   <h1 id="projects">Projects:</h1>
   </div>
@@ -64,9 +63,23 @@
     data-anchor-target="#slide-1"
   >
     <div class="slideContainer">
-      <div class="slideContent">
+      <div class="slideContent"
+        data-bottom="left: 100px"
+        data-center-bottom="bottom: 230px; left: 300px; opacity: 1"
+        data-100-top="bottom: 230px; left: 300px; opacity: 1"
+        data-top-bottom="bottom: 800px; opacity: 0"
+        data-anchor-target="#slide-1 h2:first-child"
+      >
         <h2>Nebula Creatives</h2>
       </div>
+      <div class="slideContent"
+        data-center="opacity: 1"
+        data-center-top="opacity: 0"
+        data-100-top="opacity: 0;"
+        data-anchor-target="#slide-1 h2:last-child"
+      >
+      <h3> is a diverse collective of filmmakers and artists who believe in creativity through collaboration. Started as a small art and design studio in 2005, it is now a fast growing international mixed media company where talents in art, film and design come together to create meaningful multi-layered visual and audio work. </h3>
+    </div>
     </div>
   </div>
 </section>

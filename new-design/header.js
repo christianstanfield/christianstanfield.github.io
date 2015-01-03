@@ -163,6 +163,10 @@ $(function() {
   // on page load:
   loadHeader();
 
+  var s = skrollr.init({
+    forceHeight: false
+  });
+
   // on mouseover:
   $('header img').hover(function () {
     var currentColor = $(this).css('border-color');

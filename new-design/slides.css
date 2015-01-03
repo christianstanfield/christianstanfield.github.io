@@ -3,6 +3,24 @@ section {
   width: 100%;
 }
 
+.slideContainer {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.slideContent {
+  position: absolute;
+  font-family: Raleway, Sans-Serif;
+  font-size: 1.3em;
+  color: rgb(240, 240, 240);
+}
+  .slideContent h2, .slideContent  h3 {
+    background-color: rgba(0,0,0,0.5);
+    padding: 5px 10px;
+  }
+
 .background {
   background-position: center center;
   background-repeat: no-repeat;
@@ -15,6 +33,13 @@ section {
 #slide-1 .background {
   background-image: url('../images/nebula.jpg');
 }
+  #slide-1 .slideContent:first-child {
+    top: auto;
+  }
+  #slide-1 .slideContent:last-child {
+    top: 75px;
+    left: 400px;
+  }
 
 #slide-2 .background {
   background-image: url('../images/robojs.jpg');
@@ -22,11 +47,4 @@ section {
 
 #slide-3 .background {
   background-image: url('../images/asteria.png');
-}
-
-.slideContainer {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  position: relative;
 }
