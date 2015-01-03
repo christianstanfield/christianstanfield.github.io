@@ -2,6 +2,7 @@ header {
   background-image: linear-gradient(white, black);
   height: 550px;
   width: 100%;
+  /* background: linear-gradient(to top, black, transparent 95%), url(../images/grain.jpg); */
 }
 
 .container {
@@ -125,19 +126,37 @@ header img {
 
 #projects {
   margin-left: 25px;
+  margin-top: -25px;
+  color: rgb(240, 240, 240);
   color: rgb(240, 240, 240);
   font-size: 2.6em;
+  display: none;
 }
 
-/* .transparent {
-  opacity: 0;
-  -webkit-transition: opacity 2s ease-in;
-  -moz-transition: opacity 2s ease-in;
-  -o-transition: opacity 2s ease-in;
-  -ms-transition: opacity 2s ease-in;
-  transition: opacity 2s ease-in;
+#profile {
+  position: relative;
+  z-index: 2;
+  margin-left: 550px;
+  margin-top: -200px;
+  font-family: Raleway, Sans-Serif;
+  color: rgb(240, 240, 240);
+
+  -webkit-animation: wipe 6s;
+
+  -webkit-mask-size: 2000px 2000px;
+  -webkit-mask-image: -webkit-gradient(linear, left top, right bottom,
+    color-stop(0.0,  rgba(0,0,0,1)),
+    color-stop(0.3,  rgba(0,0,0,1)),
+    color-stop(0.5,  rgba(0,0,0,0)),
+    color-stop(0.7,  rgba(0,0,0,1)),
+    color-stop(1.0,  rgba(0,0,0,1)));
 }
-  .fadeIn {
-    opacity: 1;
+  @-webkit-keyframes wipe {
+    0% {
+      -webkit-mask-position: -1200px -1200px;
+    }
+    100% {
+      -webkit-mask-position: 0 0;
+    }
   }
- */
+  

@@ -40,6 +40,7 @@ var fadeInLetters = function (word) {
 
   var letters = $(word).children();
   $(word).text('');
+  $(word).css('display','block');
 
   var i = 0;
   var fade = setInterval(function () {
@@ -152,7 +153,9 @@ var loadHeader = function () {
   var nameColor = $('#name').css('background-color');
   $('header img').css('border-color', nameColor);
 
-  fadeInLetters('#projects');
+  setTimeout(function () {
+    fadeInLetters('#projects');
+  }, 1000);
 };
 // -------------------------------------- //
 $(function() {
