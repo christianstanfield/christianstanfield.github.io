@@ -20,6 +20,9 @@ section {
     background-color: rgba(0,0,0,0.5);
     padding: 5px 10px;
   }
+  .slideContent h3 {
+    width: 750px;
+  }
 
 .background {
   background-position: center center;
@@ -44,6 +47,13 @@ section {
 #slide-2 .background {
   background-image: url('../images/robojs.jpg');
 }
+  #slide-2 .slideContent:first-child {
+    top: 50px;
+  }
+  #slide-2 .slideContent:last-child {
+    top: 100px;
+    left: 400px;
+  }
 
 #slide-3 .background {
   background-image: url('../images/asteria.png');
