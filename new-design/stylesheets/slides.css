@@ -1,0 +1,70 @@
+section {
+  height: 350px;
+  width: 100%;
+}
+
+.slideContainer {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.slideContent {
+  position: absolute;
+  font-family: Raleway, Sans-Serif;
+  font-size: 1.3em;
+  color: rgb(240, 240, 240);
+}
+  .slideContent h2, .slideContent  h3 {
+    background-color: rgba(0,0,0,0.6);
+    padding: 5px 10px;
+  }
+  .slideContent h3 {
+    width: 750px;
+  }
+
+.background {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+
+#slide-1 .background {
+  background-image: url('../../images/nebula.jpg');
+}
+  #slide-1 .slideContent:first-child {
+    top: auto;
+  }
+  #slide-1 .slideContent:last-child {
+    top: 75px;
+    left: 400px;
+  }
+
+#slide-2 .background {
+  background-image: url('../../images/robojs.jpg');
+}
+  #slide-2 .slideContent:first-child {
+    top: 50px;
+  }
+  #slide-2 .slideContent:last-child {
+    top: 100px;
+    left: 400px;
+  }
+
+#slide-3 .background {
+  background-image: url('../../images/asteria.png');
+}
+  #slide-3 .slideContent:first-child {
+    top: 25px;
+  }
+  #slide-3 .slideContent:last-child {
+    left: 350px;
+    top: 75px;
+  }
+  #slide-3 h2, #slide-3  h3 {
+    background-color: rgba(0,0,0,0.8);
+  }

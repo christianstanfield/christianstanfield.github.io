@@ -35,6 +35,20 @@ var randomizeFont = function (word) {
   });
   $(word).html(newWord);
 };
+// fades in each letter of spanned word
+var fadeInLetters = function (word) {
+
+  var letters = $(word).children();
+  $(word).text('');
+  $(word).css('display','block');
+
+  var i = 0;
+  var fade = setInterval(function () {
+    $(letters[i]).appendTo($(word)).hide().fadeIn(1000);
+    i += 1;
+    if (i >= letters.length) clearInterval(fade);
+  }, 200);
+};
 // -------------------------------------- //
 // returns any number of random colors
 var randomColors = function (numOfColors) {
@@ -138,6 +152,10 @@ var loadHeader = function () {
   // matches image border to title div of my name
   var nameColor = $('#name').css('background-color');
   $('header img').css('border-color', nameColor);
+
+  setTimeout(function () {
+    fadeInLetters('#projects');
+  }, 1000);
 };
 // -------------------------------------- //
 $(function() {
@@ -145,15 +163,20 @@ $(function() {
   // on page load:
   loadHeader();
 
+  var s = skrollr.init({
+    forceHeight: false
+  });
+
   // on mouseover:
-  $('header img').hover(function () {
-    var currentColor = $(this).css('border-color');
-    animateColorRotation(this, 'border-color', [currentColor], 'flip');
+  $('#photo').hover(function () {
+    var currentColor = $('header img').css('border-color');
+    animateColorRotation('header img', 'border-color', [currentColor]);
+    $(this).addClass('flip');
   }, function () {
     $(this).removeClass('flip');
   });
 
-  $('i').hover(function () {
+  $('#social i').hover(function () {
     var currentColor = $(this).css('color');
     animateColorRotation(this, 'color', [currentColor, 'rgb(240, 240, 240)'], 'spin');
   }, function () {
