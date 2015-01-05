@@ -168,14 +168,24 @@ $(function() {
   });
 
   // on mouseover:
-  $('header img').hover(function () {
-    var currentColor = $(this).css('border-color');
-    animateColorRotation(this, 'border-color', [currentColor], 'flip');
+  // $('header img').hover(function () {
+  //   var currentColor = $(this).css('border-color');
+  //   animateColorRotation(this, 'border-color', [currentColor], 'flip');
+  // }, function () {
+  //   $(this).removeClass('flip');
+  // });
+
+  $('#photo').hover(function () {
+    var currentColor = $('header img').css('border-color');
+    animateColorRotation('header img', 'border-color', [currentColor]);
+    $(this).addClass('flip');
+    // $('header img').css('border-color', differentColor([currentColor]));
   }, function () {
     $(this).removeClass('flip');
   });
 
-  $('i').hover(function () {
+
+  $('#social i').hover(function () {
     var currentColor = $(this).css('color');
     animateColorRotation(this, 'color', [currentColor, 'rgb(240, 240, 240)'], 'spin');
   }, function () {

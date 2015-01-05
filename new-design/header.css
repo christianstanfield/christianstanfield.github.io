@@ -10,38 +10,78 @@ header {
   margin: 0 auto;
 }
 
-header img {
-  margin-top: 42px;
-  margin-left: 150px;
-  width: 300px;
-  border-color: rgb(255, 249, 247);
-  border-style: solid;
-  border-width: 10px 10px 30px 10px;
+#photo {
+  position: relative;
+  margin-top: 50px;
+  margin-left: 135px;
+
+  width: 320px;
   transform: rotate(1deg);
   -webkit-transform: rotate(1deg);
   -ms-transform: rotate(1deg);
   -o-transform: rotate(1deg);
   -moz-transform: rotate(1deg);
-}
-  .animation, i {
-    -webkit-perspective: 600px;
-    -ms-perspective: 600px;
-    -o-perspective: 600px;
-    -moz-perspective: 600px;
-    perspective: 600px;
 
+  -webkit-perspective: 600px;
+  -ms-perspective: 600px;
+  -o-perspective: 600px;
+  -moz-perspective: 600px;
+  perspective: 600px;
+  /* box-shadow: 0 1px 5px rgba(0,0,0,0.9); */
+}
+  .front {
+    z-index: 20;
+    -webkit-transform: rotateX(0deg) rotateY(0deg);
+    -ms-transform: rotateX(0deg) rotateY(0deg);
+    -o-transform: rotateX(0deg) rotateY(0deg);
+    -moz-transform: rotateX(0deg) rotateY(0deg);
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  .back {
+    z-index: 10;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    -webkit-transform: rotateY(-180deg);
+    -moz-transform: rotateY(-179deg); /* setting to 180 causes an unnatural-looking half-flip */
+    -ms-transform: rotateY(-179deg);
+    -o-transform: rotateY(-179deg);
+    transform: rotateY(-179deg);
+  }
+  header img {
+    width: 300px;
+    border-color: rgb(255, 249, 247);
+    border-style: solid;
+    border-width: 10px 10px 30px 10px;
+  }
+  .animation {
     -webkit-transform-style: preserve-3d;
     -ms-transform-style: preserve-3d;
     -o-transform-style: preserve-3d;
     -moz-transform-style: preserve-3d;
     transform-style: preserve-3d;
+
+    -webkit-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
   }
-  .flip {
+  #photo.flip .front {
+    z-index: 20;
     -webkit-transform: rotateY(180deg);
     -ms-transform: rotateY(180deg);
     -o-transform: rotateY(180deg);
     -moz-transform: rotateY(180deg);
     transform: rotateY(180deg);
+  }
+  #photo.flip .back {
+    z-index: 30;
+    -webkit-transform: rotateX(0deg) rotateY(0deg);
+    -ms-transform: rotateX(0deg) rotateY(0deg);
+    -o-transform: rotateX(0deg) rotateY(0deg);
+    -moz-transform: rotateX(0deg) rotateY(0deg);
+    transform: rotateX(0deg) rotateY(0deg);
   }
   .ease-in {
     -webkit-transition: all 1s ease-in-out;
@@ -112,9 +152,27 @@ header img {
 #social {
   margin: 15px;
 }
-  i {
+  #social i {
     margin-right: 10px;
     color: rgb(23, 45, 59);
+
+    -webkit-perspective: 600px;
+    -ms-perspective: 600px;
+    -o-perspective: 600px;
+    -moz-perspective: 600px;
+    perspective: 600px;
+
+    -webkit-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+
+    -webkit-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
   }
   .spin {
     -webkit-transform: rotateX(180deg);
@@ -159,4 +217,3 @@ header img {
       -webkit-mask-position: 0 0;
     }
   }
-  
