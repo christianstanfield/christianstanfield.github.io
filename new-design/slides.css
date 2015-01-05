@@ -17,7 +17,7 @@ section {
   color: rgb(240, 240, 240);
 }
   .slideContent h2, .slideContent  h3 {
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0,0,0,0.6);
     padding: 5px 10px;
   }
   .slideContent h3 {
@@ -58,3 +58,13 @@ section {
 #slide-3 .background {
   background-image: url('../images/asteria.png');
 }
+  #slide-3 .slideContent:first-child {
+    top: 25px;
+  }
+  #slide-3 .slideContent:last-child {
+    left: 350px;
+    top: 75px;
+  }
+  #slide-3 h2, #slide-3  h3 {
+    background-color: rgba(0,0,0,0.8);
+  }

@@ -167,12 +167,6 @@ header {
     -o-transform-style: preserve-3d;
     -moz-transform-style: preserve-3d;
     transform-style: preserve-3d;
-
-    -webkit-backface-visibility: hidden;
-    -ms-backface-visibility: hidden;
-    -o-backface-visibility: hidden;
-    -moz-backface-visibility: hidden;
-    backface-visibility: hidden;
   }
   .spin {
     -webkit-transform: rotateX(180deg);
