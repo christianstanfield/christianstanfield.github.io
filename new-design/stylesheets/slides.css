@@ -34,7 +34,7 @@ section {
 }
 
 #slide-1 .background {
-  background-image: url('../images/nebula.jpg');
+  background-image: url('../../images/nebula.jpg');
 }
   #slide-1 .slideContent:first-child {
     top: auto;
@@ -45,7 +45,7 @@ section {
   }
 
 #slide-2 .background {
-  background-image: url('../images/robojs.jpg');
+  background-image: url('../../images/robojs.jpg');
 }
   #slide-2 .slideContent:first-child {
     top: 50px;
@@ -56,7 +56,7 @@ section {
   }
 
 #slide-3 .background {
-  background-image: url('../images/asteria.png');
+  background-image: url('../../images/asteria.png');
 }
   #slide-3 .slideContent:first-child {
     top: 25px;
